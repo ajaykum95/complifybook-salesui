@@ -23,7 +23,7 @@ export const mockedPipeline = [
     name: "National Sales",
     pipelineStatus: [
       {
-        id: 1,
+        id: 3,
         type: "Lost",
         name: "Proposal Sent",
       },

@@ -6,7 +6,7 @@ import {
   IconButton,
   InputAdornment,
   InputLabel,
-  ListItemText,
+  ListItemIcon,
   ListSubheader,
   OutlinedInput,
   Select,
@@ -18,15 +18,19 @@ import MenuItem from "@mui/material/MenuItem";
 import { tokens } from "../theme";
 import { mockedPipeline, mockedUser } from "../data/mockData";
 import CircleIcon from "@mui/icons-material/Circle";
+import CheckIcon from "@mui/icons-material/Check";
 
 export default function OpportunityForm({ formExpanded, setFormExpanded }) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [selectedDate, setSelectedDate] = React.useState("");
+  const [oppCloseDate, setOppCloseDate] = React.useState("");
   const [openAssignee, setOpenAssignee] = React.useState(false);
   const [openOpportunity, setOpenOpportunity] = React.useState(false);
   const [assignUser, setAssignUser] = React.useState("");
-  const [opportunityStatus, setOpportunityStatus] = React.useState("");
+  const [opportunityStatus, setOpportunityStatus] = React.useState(
+    mockedPipeline[0]?.pipelineStatus[0]?.id || ""
+  );
 
   React.useEffect(() => {
     const currentDate = new Date();
@@ -35,6 +39,7 @@ export default function OpportunityForm({ formExpanded, setFormExpanded }) {
     const day = String(currentDate.getDate()).padStart(2, "0");
     const today = `${year}-${month}-${day}`;
     setSelectedDate(today);
+    setOppCloseDate(today);
   }, []);
 
   const handleCloseAssignee = () => {
@@ -54,7 +59,6 @@ export default function OpportunityForm({ formExpanded, setFormExpanded }) {
   };
 
   const handleChangeOpportunity = (event) => {
-    console.log("opp Selected value:", event.target.value);
     setOpportunityStatus(event.target.value);
   };
 
@@ -77,6 +81,10 @@ export default function OpportunityForm({ formExpanded, setFormExpanded }) {
       default:
         return colors.redAccent[900];
     }
+  };
+
+  const updateOppDate = (event) => {
+    setOppCloseDate(event.target.value);
   };
 
   return (
@@ -116,10 +124,30 @@ export default function OpportunityForm({ formExpanded, setFormExpanded }) {
             if (!selected) {
               return "Status";
             }
+
+            const selectedPipeline =
+              mockedPipeline.find((pipeline) =>
+                pipeline.pipelineStatus.some((status) => status.id === selected)
+              ) || null;
+
+            const selectedStatus = selectedPipeline?.pipelineStatus.find(
+              (status) => status.id === selected
+            );
+
+            const { name, type } = selectedStatus || {};
+
             return (
               <Box>
-                <Typography sx={{ fontWeight: 600 }}>SALES</Typography>
-                <Typography>Demo Scheduled</Typography>
+                <Typography
+                  sx={{
+                    fontWeight: 600,
+                    textTransform: "uppercase",
+                    color: getStatusColor(type),
+                  }}
+                >
+                  {selectedPipeline?.name}
+                </Typography>
+                <Typography>{name}</Typography>
               </Box>
             );
           }}
@@ -136,7 +164,10 @@ export default function OpportunityForm({ formExpanded, setFormExpanded }) {
               {pipeline.name}
             </ListSubheader>,
             ...pipeline.pipelineStatus.map((status) => (
-              <MenuItem key={status.id} value={status.id}>
+              <MenuItem key={status.id} name={status.name} value={status.id}>
+                <ListItemIcon>
+                  {status.id === opportunityStatus && <CheckIcon />}
+                </ListItemIcon>
                 <Typography>
                   <IconButton sx={{ paddingTop: "6px" }}>
                     <CircleIcon
@@ -151,26 +182,13 @@ export default function OpportunityForm({ formExpanded, setFormExpanded }) {
           ])}
         </Select>
       </FormControl>
-      <FormControl fullWidth sx={{ m: 1, mb: 2, bgcolor: colors.white[900] }}>
-        <InputLabel
-          htmlFor="outlined-task-description"
-          variant="outlined"
-          size="small"
-        >
-          Task Description
-        </InputLabel>
-        <OutlinedInput
-          id="outlined-task-description"
-          label="Task Description"
-          size="small"
-        />
-      </FormControl>
       <TextField
         variant="outlined"
-        label="Date"
+        label="Estimate Close"
         type="date"
         size="small"
-        value={selectedDate}
+        value={oppCloseDate}
+        onChange={updateOppDate}
         id="outlined-start-adornment"
         sx={{ m: 1, width: "21ch", bgcolor: colors.white[900] }}
       />

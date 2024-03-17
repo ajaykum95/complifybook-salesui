@@ -121,7 +121,6 @@ export default function TaskForm({ formExpanded, setFormExpanded }) {
       <Box textAlign={"end"} width={"100%"} p={"10px 10px"}>
         <Button
           color="error"
-          expand={formExpanded}
           onClick={handleFormExpandClick}
           aria-expanded={formExpanded}
         >

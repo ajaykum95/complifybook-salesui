@@ -1,11 +1,11 @@
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 import PinDropOutlinedIcon from "@mui/icons-material/PinDropOutlined";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MyAccordian from "../../components/MyAccordian";
+import TaskItem from "../../components/TaskItem";
+import OpportunityItem from "../../components/OpportunityItem";
+import TaskForm from "../../components/TaskForm";
+import OpportunityForm from "../../components/OpportunityForm";
 
 const LeadDetails = () => {
   const theme = useTheme();
@@ -66,7 +66,20 @@ const LeadDetails = () => {
           </Box>
         </Box>
         <Box mt="25px" p="0 10px">
-          <MyAccordian name={"Tasks :"} qty={2} />
+          <MyAccordian
+            name={"TASK :"}
+            qty={2}
+            ItemComponent={TaskItem}
+            FormComponent={TaskForm}
+          />
+        </Box>
+        <Box mt="10px" p="0 10px">
+          <MyAccordian
+            name={"OPPORTUNITIES :"}
+            qty={2}
+            ItemComponent={OpportunityItem}
+            FormComponent={OpportunityForm}
+          />
         </Box>
       </Box>
       <Box

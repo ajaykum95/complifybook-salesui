@@ -18,7 +18,7 @@ import {
   MenuItem,
 } from "@mui/material";
 
-export default function TaskItem() {
+export default function OpportunityItem() {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [hoveredItem, setHoveredItem] = React.useState(null);
@@ -45,7 +45,7 @@ export default function TaskItem() {
 
   return (
     <List sx={{ width: "100%", maxWidth: 360, bgcolor: colors.white[900] }}>
-      <ListItem key={"taskItem1"}
+      <ListItem key={"item1"}
         alignItems="flex-start"
         onMouseEnter={() => setHoveredItem("item1")}
         onMouseLeave={() => setHoveredItem(null)}
@@ -77,7 +77,7 @@ export default function TaskItem() {
         )}
       </ListItem>
       <Divider variant="inset" component="li" />
-      <ListItem key={"taskItem2"}
+      <ListItem key={"item2"}
         alignItems="flex-start"
         onMouseEnter={() => setHoveredItem("item2")}
         onMouseLeave={() => setHoveredItem(null)}

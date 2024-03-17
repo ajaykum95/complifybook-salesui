@@ -1,9 +1,44 @@
 import { tokens } from "../theme";
 
+export const mockedPipeline = [
+  {
+    id: 1,
+    name: "Sales",
+    pipelineStatus: [
+      {
+        id: 1,
+        type: "Active",
+        name: "Demo Scheduled",
+      },
+      {
+        id: 2,
+        type: "Won",
+        name: "Demo Completed",
+      },
+    ],
+  },
+  {
+    id: 2,
+    type: "Active",
+    name: "National Sales",
+    pipelineStatus: [
+      {
+        id: 1,
+        type: "Lost",
+        name: "Proposal Sent",
+      },
+    ],
+  },
+];
+
 export const mockedUser = [
   {
     id: 1,
     name: "Oliver Hansen",
+    pipeline: {
+      id: 1,
+      name: "Sales",
+    },
   },
   {
     id: 2,

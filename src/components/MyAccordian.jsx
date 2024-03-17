@@ -17,8 +17,6 @@ import Collapse from "@mui/material/Collapse";
 import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import AddIcon from "@mui/icons-material/Add";
-import TaskItem from "./TaskItem";
-import TaskForm from "./TaskForm";
 
 const ExpandMore = styled((props) => {
   const { expand, ...other } = props;
@@ -31,7 +29,12 @@ const ExpandMore = styled((props) => {
   }),
 }));
 
-export default function MyAccordian({ name, qty }) {
+export default function MyAccordian({
+  name,
+  qty,
+  ItemComponent,
+  FormComponent,
+}) {
   const [formExpanded, setFormExpanded] = React.useState(false);
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
@@ -63,14 +66,12 @@ export default function MyAccordian({ name, qty }) {
         </ExpandMore>
       </CardActions>
       <Collapse in={formExpanded} timeout="auto" unmountOnExit>
-        <TaskForm
+        <FormComponent
           formExpanded={formExpanded}
           setFormExpanded={setFormExpanded}
         />
       </Collapse>
-      <Box>
-        <TaskItem />
-      </Box>
+      <Box>{ItemComponent && <ItemComponent />}</Box>
     </Card>
   );
 }

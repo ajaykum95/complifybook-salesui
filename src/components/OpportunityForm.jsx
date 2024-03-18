@@ -19,6 +19,7 @@ import { tokens } from "../theme";
 import { mockedPipeline, mockedUser } from "../data/mockData";
 import CircleIcon from "@mui/icons-material/Circle";
 import CheckIcon from "@mui/icons-material/Check";
+import FormSlider from "./FormSlider";
 
 export default function OpportunityForm({ formExpanded, setFormExpanded }) {
   const theme = useTheme();
@@ -31,6 +32,8 @@ export default function OpportunityForm({ formExpanded, setFormExpanded }) {
   const [opportunityStatus, setOpportunityStatus] = React.useState(
     mockedPipeline[0]?.pipelineStatus[0]?.id || ""
   );
+  const [currency, setCurrency] = React.useState("₹");
+  const [amount, setAmount] = React.useState("");
 
   React.useEffect(() => {
     const currentDate = new Date();
@@ -41,6 +44,14 @@ export default function OpportunityForm({ formExpanded, setFormExpanded }) {
     setSelectedDate(today);
     setOppCloseDate(today);
   }, []);
+
+  const handleChangeCurrency = (event) => {
+    setCurrency(event.target.value);
+  };
+
+  const handleChangeAmount = (event) => {
+    setAmount(event.target.value);
+  };
 
   const handleCloseAssignee = () => {
     setOpenAssignee(false);
@@ -184,7 +195,7 @@ export default function OpportunityForm({ formExpanded, setFormExpanded }) {
       </FormControl>
       <TextField
         variant="outlined"
-        label="Estimate Close"
+        label="Estimated Close"
         type="date"
         size="small"
         value={oppCloseDate}
@@ -192,16 +203,56 @@ export default function OpportunityForm({ formExpanded, setFormExpanded }) {
         id="outlined-start-adornment"
         sx={{ m: 1, width: "21ch", bgcolor: colors.white[900] }}
       />
+      <FormControl
+        sx={{
+          m: 1,
+          width: "20ch",
+          bgcolor: colors.white[900],
+          alignItems: "center",
+          border: `1px solid ${colors.white[400]}`,
+        }}
+      >
+        <FormSlider sliderWidth="80%" />
+      </FormControl>
+      <FormControl fullWidth sx={{ m: 1 }}>
+        <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
+        <OutlinedInput
+          id="outlined-adornment-amount"
+          value={amount}
+          onChange={handleChangeAmount}
+          sx={{ pl: "0px" }}
+          startAdornment={
+            <InputAdornment position="start">
+              <Select
+                labelId="currency-select-label"
+                id="currency-select"
+                value={currency}
+                onChange={handleChangeCurrency}
+                variant="outlined"
+                sx={{ border: "none" }} // Remove border from Select
+                inputProps={{
+                  style: { border: "none", outline: "none" }, // Remove border from native input
+                }}
+              >
+                <MenuItem value="₹">₹</MenuItem>
+                <MenuItem value="$">$</MenuItem>
+                {/* Add more currencies as needed */}
+              </Select>
+            </InputAdornment>
+          }
+          label="Amount"
+        />
+      </FormControl>
+
       <TextField
         variant="outlined"
-        label="Time"
-        type="time"
+        label="Amount"
+        type="date"
         size="small"
+        value={oppCloseDate}
+        onChange={updateOppDate}
         id="outlined-start-adornment"
-        sx={{ m: 1, width: "20ch", bgcolor: colors.white[900] }}
-        InputProps={{
-          startAdornment: <InputAdornment position="start"></InputAdornment>,
-        }}
+        sx={{ m: 1, width: "21ch", bgcolor: colors.white[900] }}
       />
       <FormControl
         sx={{ m: 1, minWidth: 120, mt: 2, bgcolor: colors.white[900] }}

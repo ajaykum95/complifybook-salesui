@@ -35,10 +35,6 @@ export const mockedUser = [
   {
     id: 1,
     name: "Oliver Hansen",
-    pipeline: {
-      id: 1,
-      name: "Sales",
-    },
   },
   {
     id: 2,

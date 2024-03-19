@@ -2,7 +2,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
 import Typography from "@mui/material/Typography";
-import { colors, useTheme } from "@mui/material";
+import { useTheme } from "@mui/material";
 import { tokens } from "../theme";
 
 const MAX = 100;
@@ -30,7 +30,6 @@ export default function FormSlider({ sliderWidth }) {
     <Box sx={{ width: sliderWidth }}>
       <Typography
         sx={{
-          color: colors.white[400],
           textAlign: "center",
           position: "absolute",
           top: "-8px",
@@ -54,8 +53,8 @@ export default function FormSlider({ sliderWidth }) {
           color: colors.white[400], // Change the color of the slider track
           "& .MuiSlider-thumb": {
             color: colors.white[400],
-            width: 16, // Set the width of the thumb
-            height: 16, // Set the height of the thumb
+            width: 13, // Set the width of the thumb
+            height: 13, // Set the height of the thumb
           },
         }}
       />

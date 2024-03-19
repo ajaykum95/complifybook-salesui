@@ -9,7 +9,6 @@ import { tokens } from "../theme";
 import { useTheme } from "@emotion/react";
 import CheckOutlinedIcon from "@mui/icons-material/CheckOutlined";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
-import MoreHorizOutlinedIcon from "@mui/icons-material/MoreHorizOutlined";
 import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
 import {
   IconButton,
@@ -17,23 +16,13 @@ import {
   Menu,
   MenuItem,
 } from "@mui/material";
+import AvatarName from "./AvatarName";
 
 export default function TaskItem() {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [hoveredItem, setHoveredItem] = React.useState(null);
   const [anchorEl, setAnchorEl] = React.useState(null);
-
-  const generateInitials = (name) => {
-    const parts = name.split(" ");
-    if (parts.length === 1) {
-      return parts[0].charAt(0).toUpperCase();
-    } else {
-      return (
-        parts[0].charAt(0).toUpperCase() + parts[1].charAt(0).toUpperCase()
-      );
-    }
-  };
 
   const handleMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
@@ -45,13 +34,16 @@ export default function TaskItem() {
 
   return (
     <List sx={{ width: "100%", maxWidth: 360, bgcolor: colors.white[900] }}>
-      <ListItem key={"taskItem1"}
+      <ListItem
+        key={"taskItem1"}
         alignItems="flex-start"
         onMouseEnter={() => setHoveredItem("item1")}
         onMouseLeave={() => setHoveredItem(null)}
       >
         <ListItemAvatar>
-          <Avatar>{generateInitials("Remy Sharp")}</Avatar>
+          <Avatar>
+            <AvatarName name={"Remy Sharp"} />
+          </Avatar>
         </ListItemAvatar>
         <ListItemText primary="Follow up with Dave" secondary="16/03/2024" />
         {hoveredItem === "item1" && (
@@ -77,13 +69,16 @@ export default function TaskItem() {
         )}
       </ListItem>
       <Divider variant="inset" component="li" />
-      <ListItem key={"taskItem2"}
+      <ListItem
+        key={"taskItem2"}
         alignItems="flex-start"
         onMouseEnter={() => setHoveredItem("item2")}
         onMouseLeave={() => setHoveredItem(null)}
       >
         <ListItemAvatar>
-          <Avatar>{generateInitials("Travis Howard")}</Avatar>
+          <Avatar>
+            <AvatarName name={"Travis Howard"} />
+          </Avatar>
         </ListItemAvatar>
         <ListItemText
           primary="Call to avinash regarding GST Registration"

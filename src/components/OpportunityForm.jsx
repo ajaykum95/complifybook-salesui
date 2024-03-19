@@ -1,11 +1,13 @@
 import * as React from "react";
 import {
+  Avatar,
   Box,
   Button,
   FormControl,
   IconButton,
   InputAdornment,
   InputLabel,
+  ListItemAvatar,
   ListItemIcon,
   ListSubheader,
   OutlinedInput,
@@ -20,20 +22,20 @@ import { mockedPipeline, mockedUser } from "../data/mockData";
 import CircleIcon from "@mui/icons-material/Circle";
 import CheckIcon from "@mui/icons-material/Check";
 import FormSlider from "./FormSlider";
+import AvatarName from "./AvatarName";
 
 export default function OpportunityForm({ formExpanded, setFormExpanded }) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const [selectedDate, setSelectedDate] = React.useState("");
   const [oppCloseDate, setOppCloseDate] = React.useState("");
-  const [openAssignee, setOpenAssignee] = React.useState(false);
-  const [openOpportunity, setOpenOpportunity] = React.useState(false);
   const [assignUser, setAssignUser] = React.useState("");
   const [opportunityStatus, setOpportunityStatus] = React.useState(
     mockedPipeline[0]?.pipelineStatus[0]?.id || ""
   );
   const [currency, setCurrency] = React.useState("₹");
   const [amount, setAmount] = React.useState("");
+  const [amountType, setAmountType] = React.useState(1);
+  const [contact, setContact] = React.useState("");
 
   React.useEffect(() => {
     const currentDate = new Date();
@@ -41,7 +43,6 @@ export default function OpportunityForm({ formExpanded, setFormExpanded }) {
     const month = String(currentDate.getMonth() + 1).padStart(2, "0");
     const day = String(currentDate.getDate()).padStart(2, "0");
     const today = `${year}-${month}-${day}`;
-    setSelectedDate(today);
     setOppCloseDate(today);
   }, []);
 
@@ -49,24 +50,16 @@ export default function OpportunityForm({ formExpanded, setFormExpanded }) {
     setCurrency(event.target.value);
   };
 
+  const handleChangeContact = (event) => {
+    setContact(event.target.value);
+  };
+
   const handleChangeAmount = (event) => {
     setAmount(event.target.value);
   };
 
-  const handleCloseAssignee = () => {
-    setOpenAssignee(false);
-  };
-
-  const handleOpenAssignee = () => {
-    setOpenAssignee(true);
-  };
-
-  const handleOppClose = () => {
-    setOpenOpportunity(false);
-  };
-
-  const handleOppOpen = () => {
-    setOpenOpportunity(true);
+  const handleAmountType = (event) => {
+    setAmountType(event.target.value);
   };
 
   const handleChangeOpportunity = (event) => {
@@ -112,7 +105,7 @@ export default function OpportunityForm({ formExpanded, setFormExpanded }) {
       }}
     >
       <FormControl
-        sx={{ m: 1, minWidth: 120, mt: 2, bgcolor: colors.white[900] }}
+        sx={{ m: 1, minWidth: 120, mb:2, bgcolor: colors.white[900] }}
         fullWidth
       >
         <InputLabel
@@ -125,9 +118,6 @@ export default function OpportunityForm({ formExpanded, setFormExpanded }) {
         <Select
           label="Status"
           id="demo-controlled-open-select-opp"
-          open={openOpportunity}
-          onClose={handleOppClose}
-          onOpen={handleOppOpen}
           value={opportunityStatus}
           onChange={handleChangeOpportunity}
           size="small"
@@ -201,11 +191,12 @@ export default function OpportunityForm({ formExpanded, setFormExpanded }) {
         value={oppCloseDate}
         onChange={updateOppDate}
         id="outlined-start-adornment"
-        sx={{ m: 1, width: "21ch", bgcolor: colors.white[900] }}
+        sx={{ m: 1, mb:2, width: "21ch", bgcolor: colors.white[900] }}
       />
       <FormControl
         sx={{
           m: 1,
+          mb:2,
           width: "20ch",
           bgcolor: colors.white[900],
           alignItems: "center",
@@ -214,13 +205,15 @@ export default function OpportunityForm({ formExpanded, setFormExpanded }) {
       >
         <FormSlider sliderWidth="80%" />
       </FormControl>
-      <FormControl fullWidth sx={{ m: 1 }}>
+      <FormControl sx={{ m: 1, width: "21ch", bgcolor: colors.white[900] }}>
         <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
         <OutlinedInput
           id="outlined-adornment-amount"
           value={amount}
           onChange={handleChangeAmount}
           sx={{ pl: "0px" }}
+          size="small"
+          type="number"
           startAdornment={
             <InputAdornment position="start">
               <Select
@@ -229,9 +222,11 @@ export default function OpportunityForm({ formExpanded, setFormExpanded }) {
                 value={currency}
                 onChange={handleChangeCurrency}
                 variant="outlined"
-                sx={{ border: "none" }} // Remove border from Select
-                inputProps={{
-                  style: { border: "none", outline: "none" }, // Remove border from native input
+                size="small"
+                sx={{
+                  width: "3ch",
+                  "& fieldset": { border: "none" },
+                  "& .MuiSelect-icon": { display: "none" },
                 }}
               >
                 <MenuItem value="₹">₹</MenuItem>
@@ -243,41 +238,137 @@ export default function OpportunityForm({ formExpanded, setFormExpanded }) {
           label="Amount"
         />
       </FormControl>
-
-      <TextField
-        variant="outlined"
-        label="Amount"
-        type="date"
-        size="small"
-        value={oppCloseDate}
-        onChange={updateOppDate}
-        id="outlined-start-adornment"
-        sx={{ m: 1, width: "21ch", bgcolor: colors.white[900] }}
-      />
+      <FormControl sx={{ m: 1, width: "20ch", bgcolor: colors.white[900] }}>
+        <InputLabel size="small" id="demo-simple-select-label">
+          Payment Term
+        </InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={amountType}
+          label="Amount Type"
+          onChange={handleAmountType}
+          size="small"
+        >
+          <MenuItem value={1}>One-Time</MenuItem>
+          <MenuItem value={2}>Monthly</MenuItem>
+          <MenuItem value={3}>Yearly</MenuItem>
+        </Select>
+      </FormControl>
+      <FormControl
+        sx={{ m: 1, minWidth: 120, mt: 2, bgcolor: colors.white[900] }}
+        fullWidth
+      >
+        <InputLabel id="contact-controlled-open-select-label" size="small">
+          Contact
+        </InputLabel>
+        <Select
+          labelId="contact-controlled-open-select-label"
+          id="contact-controlled-open-select"
+          value={contact}
+          label="Contact"
+          onChange={handleChangeContact}
+          size="small"
+          renderValue={(contactId) => {
+            const selectedContact = mockedUser.find(
+              (user) => user.id === contactId
+            );
+            return (
+              <Box sx={{ display: "flex", alignItems: "center" }}>
+                <ListItemAvatar sx={{ minWidth: "35px" }}>
+                  <Avatar
+                    sx={{ height: "4ch", width: "4ch", fontSize: "12px" }}
+                  >
+                    <AvatarName name={selectedContact.name} />
+                  </Avatar>
+                </ListItemAvatar>
+                <Typography variant="inherit">
+                  {selectedContact.name}
+                </Typography>
+              </Box>
+            );
+          }}
+        >
+          {mockedUser.map((user) => (
+            <MenuItem
+              key={user.id}
+              value={user.id}
+              sx={{ display: "flex", alignItems: "center" }}
+            >
+              <ListItemAvatar sx={{ minWidth: "35px" }}>
+                <Avatar sx={{ height: "5ch", width: "5ch", fontSize: "12px" }}>
+                  <AvatarName name={user.name} />
+                </Avatar>
+              </ListItemAvatar>
+              <Typography variant="inherit" sx={{ ml: "5px" }}>
+                {user.name}
+              </Typography>
+            </MenuItem>
+          ))}
+        </Select>
+      </FormControl>
       <FormControl
         sx={{ m: 1, minWidth: 120, mt: 2, bgcolor: colors.white[900] }}
         fullWidth
       >
         <InputLabel id="demo-controlled-open-select-label" size="small">
-          Assign User
+          User
         </InputLabel>
         <Select
           labelId="demo-controlled-open-select-label"
           id="demo-controlled-open-select"
-          open={openAssignee}
-          onClose={handleCloseAssignee}
-          onOpen={handleOpenAssignee}
           value={assignUser}
-          label="Assign User"
+          label="User"
           onChange={handleChangeAssignee}
           size="small"
+          renderValue={(contactId) => {
+            const selectedContact = mockedUser.find(
+              (user) => user.id === contactId
+            );
+            return (
+              <Box sx={{ display: "flex", alignItems: "center" }}>
+                <ListItemAvatar sx={{ minWidth: "35px" }}>
+                  <Avatar
+                    sx={{ height: "4ch", width: "4ch", fontSize: "12px" }}
+                  >
+                    <AvatarName name={selectedContact.name} />
+                  </Avatar>
+                </ListItemAvatar>
+                <Typography variant="inherit">
+                  {selectedContact.name}
+                </Typography>
+              </Box>
+            );
+          }}
         >
           {mockedUser.map((user) => (
-            <MenuItem key={user.id} value={user.id}>
-              {user.name}
+            <MenuItem
+              key={user.id}
+              value={user.id}
+              sx={{ display: "flex", alignItems: "center" }}
+            >
+              <ListItemAvatar sx={{ minWidth: "35px" }}>
+                <Avatar sx={{ height: "5ch", width: "5ch", fontSize: "12px" }}>
+                  <AvatarName name={user.name} />
+                </Avatar>
+              </ListItemAvatar>
+              <Typography variant="inherit" sx={{ ml: "5px" }}>
+                {user.name}
+              </Typography>
             </MenuItem>
           ))}
         </Select>
+      </FormControl>
+      <FormControl
+        sx={{ m: 1, minWidth: 120, mt: 2, bgcolor: colors.white[900] }}
+        fullWidth
+      >
+        <TextField
+          id="outlined-multiline-static"
+          label="Notes"
+          multiline
+          rows={3}
+        />
       </FormControl>
       <Box textAlign={"end"} width={"100%"} p={"10px 10px"}>
         <Button

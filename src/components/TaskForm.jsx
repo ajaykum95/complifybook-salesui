@@ -97,7 +97,7 @@ export default function TaskForm({ formExpanded, setFormExpanded }) {
         sx={{ m: 1, minWidth: 120, mt: 2, bgcolor: colors.white[900] }}
         fullWidth
       >
-        <InputLabel id="demo-controlled-open-select-label" size="small">
+        <InputLabel fullWidth id="demo-controlled-open-select-label" size="small">
           Assign User
         </InputLabel>
         <Select
@@ -110,6 +110,7 @@ export default function TaskForm({ formExpanded, setFormExpanded }) {
           label="Assign User"
           onChange={handleChange}
           size="small"
+          fullWidth
         >
           {mockedUser.map((user) => (
             <MenuItem key={user.id} value={user.id}>

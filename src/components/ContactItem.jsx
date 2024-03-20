@@ -19,7 +19,7 @@ import {
 } from "@mui/material";
 import AvatarName from "./AvatarName";
 
-export default function TaskItem() {
+export default function ContactItem() {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [hoveredItem, setHoveredItem] = React.useState(null);
@@ -43,13 +43,10 @@ export default function TaskItem() {
       >
         <ListItemAvatar>
           <Avatar>
-            <AvatarName name={"Remy Sharp"} />
+            <AvatarName name={"Prince Malhotra Singh"} />
           </Avatar>
         </ListItemAvatar>
-        <ListItemText
-          primary="Follow up with Dave"
-          secondary="16/03/2024 10:15 AM"
-        />
+        <ListItemText primary="Prince Malhotra Singh" secondary="CEO" />
         {hoveredItem === "item1" && (
           <ListItemSecondaryAction>
             <IconButton onClick={handleMenuOpen}>
@@ -63,10 +60,6 @@ export default function TaskItem() {
               <MenuItem>
                 <EditOutlinedIcon fontSize="small" />
                 &nbsp;Edit
-              </MenuItem>
-              <MenuItem>
-                <CheckOutlinedIcon fontSize="small" />
-                &nbsp;Done
               </MenuItem>
               <MenuItem>
                 <DeleteOutlineOutlinedIcon fontSize="small" />
@@ -109,10 +102,6 @@ export default function TaskItem() {
               <MenuItem>
                 <CheckOutlinedIcon fontSize="small" />
                 &nbsp;Done
-              </MenuItem>
-              <MenuItem>
-                <DeleteOutlineOutlinedIcon fontSize="small" />
-                &nbsp;Delete
               </MenuItem>
             </Menu>
           </ListItemSecondaryAction>

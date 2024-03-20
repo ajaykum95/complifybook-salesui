@@ -6,6 +6,7 @@ import TaskItem from "../../components/TaskItem";
 import OpportunityItem from "../../components/OpportunityItem";
 import TaskForm from "../../components/TaskForm";
 import OpportunityForm from "../../components/OpportunityForm";
+import ContactItem from "../../components/ContactItem";
 
 const LeadDetails = () => {
   const theme = useTheme();
@@ -18,7 +19,7 @@ const LeadDetails = () => {
     >
       <Box
         gridColumn="span 4"
-        gridRow="span 6"
+        gridRow="span 12"
         backgroundColor={colors.primary[400]}
       >
         <Box
@@ -81,10 +82,18 @@ const LeadDetails = () => {
             FormComponent={OpportunityForm}
           />
         </Box>
+        <Box mt="10px" p="0 10px">
+          <MyAccordian
+            name={"CONTACTS :"}
+            qty={1}
+            ItemComponent={ContactItem}
+            FormComponent={OpportunityForm}
+          />
+        </Box>
       </Box>
       <Box
         gridColumn="span 8"
-        gridRow="span 6"
+        gridRow="span 12"
         backgroundColor={colors.primary[400]}
       >
         <Box

@@ -44,7 +44,7 @@ export default function MyAccordian({
   };
 
   return (
-    <Card sx={{ maxWidth: 345, backgroundColor: colors.primary[400] }}>
+    <Card sx={{ width: "100%", backgroundColor: colors.primary[400] }}>
       <CardActions
         disableSpacing
         sx={{
@@ -52,7 +52,7 @@ export default function MyAccordian({
           bgcolor: colors.greenAccent[900],
         }}
       >
-        <Typography variant="h5" fontWeight={"600"} pl={"10px"}>
+        <Typography variant="h6" fontWeight={"600"} pl={"10px"}>
           {name}&nbsp;&nbsp;
           {qty}
         </Typography>

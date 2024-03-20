@@ -4,12 +4,12 @@ import { tokens } from "../theme";
 const OpportunityColor = ({ statusType }) => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  switch (statusType) {
-    case "Active":
+  switch (statusType.toLowerCase()) {
+    case "active":
       return colors.orange[500];
-    case "Won":
+    case "won":
       return colors.greenAccent[400];
-    case "Lost":
+    case "lost":
       return colors.redAccent[400];
     default:
       return colors.redAccent[900];

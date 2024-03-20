@@ -7,6 +7,7 @@ import OpportunityItem from "../../components/OpportunityItem";
 import TaskForm from "../../components/TaskForm";
 import OpportunityForm from "../../components/OpportunityForm";
 import ContactItem from "../../components/ContactItem";
+import ContactForm from "../../components/ContactForm";
 
 const LeadDetails = () => {
   const theme = useTheme();
@@ -85,9 +86,9 @@ const LeadDetails = () => {
         <Box mt="10px" p="0 10px">
           <MyAccordian
             name={"CONTACTS :"}
-            qty={1}
+            qty={2}
             ItemComponent={ContactItem}
-            FormComponent={OpportunityForm}
+            FormComponent={ContactForm}
           />
         </Box>
       </Box>

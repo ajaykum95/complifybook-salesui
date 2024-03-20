@@ -35,12 +35,7 @@ export default function TaskItem() {
 
   return (
     <List sx={{ width: "100%", maxWidth: 360, bgcolor: colors.white[900] }}>
-      <ListItem
-        key={"taskItem1"}
-        alignItems="flex-start"
-        onMouseEnter={() => setHoveredItem("item1")}
-        onMouseLeave={() => setHoveredItem(null)}
-      >
+      <ListItem key={"taskItem1"} alignItems="flex-start">
         <ListItemAvatar>
           <Avatar>
             <AvatarName name={"Remy Sharp"} />
@@ -50,39 +45,32 @@ export default function TaskItem() {
           primary="Follow up with Dave"
           secondary="16/03/2024 10:15 AM"
         />
-        {hoveredItem === "item1" && (
-          <ListItemSecondaryAction>
-            <IconButton onClick={handleMenuOpen}>
-              <MoreVertOutlinedIcon fontSize="small" />
-            </IconButton>
-            <Menu
-              anchorEl={anchorEl}
-              open={Boolean(anchorEl)}
-              onClose={handleMenuClose}
-            >
-              <MenuItem>
-                <EditOutlinedIcon fontSize="small" />
-                &nbsp;Edit
-              </MenuItem>
-              <MenuItem>
-                <CheckOutlinedIcon fontSize="small" />
-                &nbsp;Done
-              </MenuItem>
-              <MenuItem>
-                <DeleteOutlineOutlinedIcon fontSize="small" />
-                &nbsp;Delete
-              </MenuItem>
-            </Menu>
-          </ListItemSecondaryAction>
-        )}
+        <ListItemSecondaryAction>
+          <IconButton onClick={handleMenuOpen}>
+            <MoreVertOutlinedIcon fontSize="small" />
+          </IconButton>
+          <Menu
+            anchorEl={anchorEl}
+            open={Boolean(anchorEl)}
+            onClose={handleMenuClose}
+          >
+            <MenuItem>
+              <EditOutlinedIcon fontSize="small" />
+              &nbsp;Edit
+            </MenuItem>
+            <MenuItem>
+              <CheckOutlinedIcon fontSize="small" />
+              &nbsp;Done
+            </MenuItem>
+            <MenuItem>
+              <DeleteOutlineOutlinedIcon fontSize="small" />
+              &nbsp;Delete
+            </MenuItem>
+          </Menu>
+        </ListItemSecondaryAction>
       </ListItem>
       <Divider variant="inset" component="li" />
-      <ListItem
-        key={"taskItem2"}
-        alignItems="flex-start"
-        onMouseEnter={() => setHoveredItem("item2")}
-        onMouseLeave={() => setHoveredItem(null)}
-      >
+      <ListItem key={"taskItem2"} alignItems="flex-start">
         <ListItemAvatar>
           <Avatar>
             <AvatarName name={"Travis Howard"} />
@@ -92,31 +80,29 @@ export default function TaskItem() {
           primary="Call to avinash regarding GST Registration"
           secondary="20/03/2024 12:00 PM"
         />
-        {hoveredItem === "item2" && (
-          <ListItemSecondaryAction>
-            <IconButton onClick={handleMenuOpen}>
-              <MoreVertOutlinedIcon fontSize="small" />
-            </IconButton>
-            <Menu
-              anchorEl={anchorEl}
-              open={Boolean(anchorEl)}
-              onClose={handleMenuClose}
-            >
-              <MenuItem>
-                <EditOutlinedIcon fontSize="small" />
-                &nbsp;Edit
-              </MenuItem>
-              <MenuItem>
-                <CheckOutlinedIcon fontSize="small" />
-                &nbsp;Done
-              </MenuItem>
-              <MenuItem>
-                <DeleteOutlineOutlinedIcon fontSize="small" />
-                &nbsp;Delete
-              </MenuItem>
-            </Menu>
-          </ListItemSecondaryAction>
-        )}
+        <ListItemSecondaryAction>
+          <IconButton onClick={handleMenuOpen}>
+            <MoreVertOutlinedIcon fontSize="small" />
+          </IconButton>
+          <Menu
+            anchorEl={anchorEl}
+            open={Boolean(anchorEl)}
+            onClose={handleMenuClose}
+          >
+            <MenuItem>
+              <EditOutlinedIcon fontSize="small" />
+              &nbsp;Edit
+            </MenuItem>
+            <MenuItem>
+              <CheckOutlinedIcon fontSize="small" />
+              &nbsp;Done
+            </MenuItem>
+            <MenuItem>
+              <DeleteOutlineOutlinedIcon fontSize="small" />
+              &nbsp;Delete
+            </MenuItem>
+          </Menu>
+        </ListItemSecondaryAction>
       </ListItem>
     </List>
   );

@@ -30,7 +30,6 @@ import OpportunityColor from "./OpportunityColor";
 export default function OpportunityItem() {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const [hoveredItem, setHoveredItem] = React.useState(null);
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleMenuOpen = (event) => {
@@ -43,12 +42,7 @@ export default function OpportunityItem() {
 
   return (
     <List sx={{ width: "100%", bgcolor: colors.white[900] }}>
-      <ListItem
-        key={"item1"}
-        alignItems="flex-start"
-        onMouseEnter={() => setHoveredItem("item1")}
-        onMouseLeave={() => setHoveredItem(null)}
-      >
+      <ListItem key={"item1"} alignItems="flex-start">
         <Grid container alignItems="center" sx={{ display: "flex" }}>
           <Grid item xs={2}>
             <ListItemAvatar sx={{ minWidth: "47px" }}>
@@ -70,31 +64,29 @@ export default function OpportunityItem() {
               primary="$ 4567"
               secondary="50%"
             />
-            {hoveredItem === "item1" && (
-              <ListItemSecondaryAction sx={{ top: "5ch" }}>
-                <IconButton onClick={handleMenuOpen}>
-                  <MoreVertOutlinedIcon fontSize="small" />
-                </IconButton>
-                <Menu
-                  anchorEl={anchorEl}
-                  open={Boolean(anchorEl)}
-                  onClose={handleMenuClose}
-                >
-                  <MenuItem>
-                    <EditOutlinedIcon fontSize="small" />
-                    &nbsp;Edit
-                  </MenuItem>
-                  <MenuItem>
-                    <CheckOutlinedIcon fontSize="small" />
-                    &nbsp;Done
-                  </MenuItem>
-                  <MenuItem>
-                    <DeleteOutlineOutlinedIcon fontSize="small" />
-                    &nbsp;Delete
-                  </MenuItem>
-                </Menu>
-              </ListItemSecondaryAction>
-            )}
+            <ListItemSecondaryAction sx={{ top: "5ch" }}>
+              <IconButton onClick={handleMenuOpen}>
+                <MoreVertOutlinedIcon fontSize="small" />
+              </IconButton>
+              <Menu
+                anchorEl={anchorEl}
+                open={Boolean(anchorEl)}
+                onClose={handleMenuClose}
+              >
+                <MenuItem>
+                  <EditOutlinedIcon fontSize="small" />
+                  &nbsp;Edit
+                </MenuItem>
+                <MenuItem>
+                  <CheckOutlinedIcon fontSize="small" />
+                  &nbsp;Done
+                </MenuItem>
+                <MenuItem>
+                  <DeleteOutlineOutlinedIcon fontSize="small" />
+                  &nbsp;Delete
+                </MenuItem>
+              </Menu>
+            </ListItemSecondaryAction>
           </Grid>
           <Grid item marginTop={1}>
             <Box
@@ -174,12 +166,7 @@ export default function OpportunityItem() {
         </Grid>
       </ListItem>
       <Divider />
-      <ListItem
-        key={"item2"}
-        alignItems="flex-start"
-        onMouseEnter={() => setHoveredItem("item2")}
-        onMouseLeave={() => setHoveredItem(null)}
-      >
+      <ListItem key={"item2"} alignItems="flex-start">
         <Grid
           container
           alignItems="center"
@@ -205,31 +192,29 @@ export default function OpportunityItem() {
               primary="$ 8567"
               secondary="80%"
             />
-            {hoveredItem === "item2" && (
-              <ListItemSecondaryAction sx={{ top: "5ch" }}>
-                <IconButton onClick={handleMenuOpen}>
-                  <MoreVertOutlinedIcon fontSize="small" />
-                </IconButton>
-                <Menu
-                  anchorEl={anchorEl}
-                  open={Boolean(anchorEl)}
-                  onClose={handleMenuClose}
-                >
-                  <MenuItem>
-                    <EditOutlinedIcon fontSize="small" />
-                    &nbsp;Edit
-                  </MenuItem>
-                  <MenuItem>
-                    <CheckOutlinedIcon fontSize="small" />
-                    &nbsp;Done
-                  </MenuItem>
-                  <MenuItem>
-                    <DeleteOutlineOutlinedIcon fontSize="small" />
-                    &nbsp;Delete
-                  </MenuItem>
-                </Menu>
-              </ListItemSecondaryAction>
-            )}
+            <ListItemSecondaryAction sx={{ top: "5ch" }}>
+              <IconButton onClick={handleMenuOpen}>
+                <MoreVertOutlinedIcon fontSize="small" />
+              </IconButton>
+              <Menu
+                anchorEl={anchorEl}
+                open={Boolean(anchorEl)}
+                onClose={handleMenuClose}
+              >
+                <MenuItem>
+                  <EditOutlinedIcon fontSize="small" />
+                  &nbsp;Edit
+                </MenuItem>
+                <MenuItem>
+                  <CheckOutlinedIcon fontSize="small" />
+                  &nbsp;Done
+                </MenuItem>
+                <MenuItem>
+                  <DeleteOutlineOutlinedIcon fontSize="small" />
+                  &nbsp;Delete
+                </MenuItem>
+              </Menu>
+            </ListItemSecondaryAction>
           </Grid>
           <Grid item marginTop={1}>
             <Box

@@ -105,7 +105,7 @@ export default function OpportunityForm({ formExpanded, setFormExpanded }) {
       }}
     >
       <FormControl
-        sx={{ m: 1, minWidth: 120, mb:2, bgcolor: colors.white[900] }}
+        sx={{ m: 1, minWidth: 120, mb: 2, bgcolor: colors.white[900] }}
         fullWidth
       >
         <InputLabel
@@ -191,12 +191,12 @@ export default function OpportunityForm({ formExpanded, setFormExpanded }) {
         value={oppCloseDate}
         onChange={updateOppDate}
         id="outlined-start-adornment"
-        sx={{ m: 1, mb:2, width: "21ch", bgcolor: colors.white[900] }}
+        sx={{ m: 1, mb: 2, width: "21ch", bgcolor: colors.white[900] }}
       />
       <FormControl
         sx={{
           m: 1,
-          mb:2,
+          mb: 2,
           width: "20ch",
           bgcolor: colors.white[900],
           alignItems: "center",
@@ -215,7 +215,7 @@ export default function OpportunityForm({ formExpanded, setFormExpanded }) {
           size="small"
           type="number"
           startAdornment={
-            <InputAdornment position="start">
+            <InputAdornment position="start" sx={{ width: "3ch" }}>
               <Select
                 labelId="currency-select-label"
                 id="currency-select"
@@ -224,9 +224,8 @@ export default function OpportunityForm({ formExpanded, setFormExpanded }) {
                 variant="outlined"
                 size="small"
                 sx={{
-                  width: "3ch",
                   "& fieldset": { border: "none" },
-                  "& .MuiSelect-icon": { display: "none" },
+                  "& .MuiSelect-icon": { display: "none" }
                 }}
               >
                 <MenuItem value="₹">₹</MenuItem>

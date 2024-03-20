@@ -18,7 +18,6 @@ export default function TaskForm({ formExpanded, setFormExpanded }) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [selectedDate, setSelectedDate] = React.useState("");
-  const [open, setOpen] = React.useState(false);
   const [assignUser, setAssignUser] = React.useState("");
 
   React.useEffect(() => {
@@ -29,14 +28,6 @@ export default function TaskForm({ formExpanded, setFormExpanded }) {
     const today = `${year}-${month}-${day}`;
     setSelectedDate(today);
   }, []);
-
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
 
   const handleChange = (event) => {
     setAssignUser(event.target.value);
@@ -103,9 +94,6 @@ export default function TaskForm({ formExpanded, setFormExpanded }) {
         <Select
           labelId="demo-controlled-open-select-label"
           id="demo-controlled-open-select"
-          open={open}
-          onClose={handleClose}
-          onOpen={handleOpen}
           value={assignUser}
           label="Assign User"
           onChange={handleChange}

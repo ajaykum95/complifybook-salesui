@@ -20,7 +20,7 @@ const LeadDetails = () => {
     >
       <Box
         gridColumn="span 4"
-        gridRow="span 12"
+        gridRow="span 13"
         backgroundColor={colors.primary[400]}
       >
         <Box
@@ -94,7 +94,7 @@ const LeadDetails = () => {
       </Box>
       <Box
         gridColumn="span 8"
-        gridRow="span 12"
+        gridRow="span 13"
         backgroundColor={colors.primary[400]}
       >
         <Box

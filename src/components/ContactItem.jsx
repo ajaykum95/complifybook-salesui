@@ -16,6 +16,7 @@ import {
   ListItemSecondaryAction,
   Menu,
   MenuItem,
+  Typography,
 } from "@mui/material";
 import AvatarName from "./AvatarName";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
@@ -37,7 +38,11 @@ export default function ContactItem() {
 
   return (
     <List sx={{ width: "100%", maxWidth: 360, bgcolor: colors.white[900] }}>
-      <ListItem key={"taskItem1"} alignItems="flex-start">
+      <ListItem
+        key={"taskItem1"}
+        alignItems="flex-start"
+        sx={{ bgcolor: colors.orange[900] }}
+      >
         <ListItemAvatar>
           <Avatar>
             <AvatarName name={"Prince Malhotra Singh"} />
@@ -76,8 +81,33 @@ export default function ContactItem() {
           </Menu>
         </ListItemSecondaryAction>
       </ListItem>
-      <Divider variant="inset" component="li" />
-      <ListItem key={"taskItem2"} alignItems="flex-start">
+      <Divider />
+      <ListItem key={"listChildc11"} alignItems="flex-start">
+        <Typography sx={{ fontWeight: "600", width: "20%" }}>Mobile</Typography>
+        <Typography color={colors.blue[400]} width={"80%"}>
+          7550756640
+        </Typography>
+      </ListItem>
+      <Divider />
+      <ListItem key={"listChildc12"} alignItems="flex-start">
+        <Typography sx={{ fontWeight: "600", width: "20%" }}>Email</Typography>
+        <Typography color={colors.blue[400]} width={"80%"}>
+          ajay30935@gmail.com
+        </Typography>
+      </ListItem>
+      <Divider />
+      <ListItem key={"listChildc13"} alignItems="flex-start">
+        <Typography sx={{ fontWeight: "600", width: "20%" }}>Home</Typography>
+        <Typography color={colors.blue[400]} width={"80%"}>
+          A-2, Chander Vihar, Mandawli, Delhi, 110092
+        </Typography>
+      </ListItem>
+      <Divider />
+      <ListItem
+        key={"taskItem2"}
+        alignItems="flex-start"
+        sx={{ bgcolor: colors.orange[900] }}
+      >
         <ListItemAvatar>
           <Avatar>
             <AvatarName name={"Travis Howard"} />
@@ -115,6 +145,19 @@ export default function ContactItem() {
             </MenuItem>
           </Menu>
         </ListItemSecondaryAction>
+      </ListItem>
+      <Divider />
+      <ListItem key={"listChildc21"} alignItems="flex-start">
+        <Typography sx={{ fontWeight: "600", width: "20%" }}>Mobile</Typography>
+        <Typography color={colors.blue[400]} width={"80%"}>
+          8178488820
+        </Typography>
+      </ListItem>
+      <ListItem key={"listChildc22"} alignItems="flex-start">
+        <Typography sx={{ fontWeight: "600", width: "20%" }}>Email</Typography>
+        <Typography color={colors.blue[400]} width={"80%"}>
+          enquiry@malhotra.com
+        </Typography>
       </ListItem>
     </List>
   );

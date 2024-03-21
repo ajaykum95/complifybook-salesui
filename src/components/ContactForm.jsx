@@ -3,26 +3,38 @@ import {
   Box,
   Button,
   FormControl,
+  IconButton,
   InputAdornment,
   InputLabel,
   OutlinedInput,
   Select,
+  Typography,
   useTheme,
 } from "@mui/material";
 import MenuItem from "@mui/material/MenuItem";
 import { tokens } from "../theme";
+import AddIcon from "@mui/icons-material/Add";
 
 export default function ContactForm({ formExpanded, setFormExpanded }) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
-  const [contactType, setContactType] = React.useState("2");
+  const [contactTypes, setContactTypes] = React.useState(["2"]);
+  const [contactDetailsCount, setContactDetailsCount] = React.useState(1);
 
   const handleFormExpandClick = () => {
     setFormExpanded(!formExpanded);
   };
 
-  const handleChangeContactType = (event) => {
-    setContactType(event.target.value);
+  const handleChangeContactType = (event, sn) => {
+    const newContactTypes = [...contactTypes];
+    newContactTypes[sn] = event.target.value;
+    setContactTypes(newContactTypes);
+  };
+
+  const handleAddContactDetailsBox = () => {
+    console.log("add more clicked");
+    setContactDetailsCount((prevCount) => prevCount + 1);
+    setContactTypes((prevTypes) => [...prevTypes, "2"]);
   };
 
   return (
@@ -58,47 +70,75 @@ export default function ContactForm({ formExpanded, setFormExpanded }) {
         </InputLabel>
         <OutlinedInput id="outlined-contact-title" label="title" size="small" />
       </FormControl>
-      <FormControl fullWidth sx={{ m: 1, bgcolor: colors.white[900] }}>
-        <InputLabel htmlFor="outlined-contact-details">
-          Contact Details
-        </InputLabel>
-        <OutlinedInput
-          id="outlined-adornment-contact"
-          sx={{ pl: "0px" }}
-          size="small"
-          startAdornment={
-            <InputAdornment position="start">
-              <Select
-                labelId="contact-type-label"
-                id="contact-type-select"
-                value={contactType}
-                onChange={handleChangeContactType}
-                variant="outlined"
-                size="small"
-                sx={{
-                  "& fieldset": {
-                    border: "none",
-                    borderRight: `1px solid ${colors.grey[900]}`,
-                    borderTopRightRadius: "0px",
-                    borderBottomRightRadius: "0px",
-                  },
-                  "& .MuiSelect-icon": { display: "none" },
-                }}
-              >
-                <MenuItem value="2">Mobile</MenuItem>
-                <MenuItem value="3">Email</MenuItem>
-                <MenuItem value="1">Office</MenuItem>
-                <MenuItem value="4">Home</MenuItem>
-                <MenuItem value="5">Direct</MenuItem>
-                <MenuItem value="6">Fax</MenuItem>
-                <MenuItem value="7">URL</MenuItem>
-                <MenuItem value="8">Other</MenuItem>
-              </Select>
-            </InputAdornment>
-          }
-          label="Contact Details"
-        />
-      </FormControl>
+      {Array.from({ length: contactDetailsCount }).map((_, sn) => (
+        <FormControl
+          fullWidth
+          sx={{ m: 1, bgcolor: colors.white[900] }}
+          key={sn}
+        >
+          <InputLabel htmlFor="outlined-contact-details">
+            Contact Details
+          </InputLabel>
+          <OutlinedInput
+            id={`outlined-adornment-contact-${sn}`}
+            sx={{ pl: "0px" }}
+            size="small"
+            startAdornment={
+              <InputAdornment position="start">
+                <Select
+                  labelId={`contact-type-label-${sn}`}
+                  id={`contact-type-select-${sn}`}
+                  value={contactTypes[sn]}
+                  onChange={(event) => handleChangeContactType(event, sn)}
+                  variant="outlined"
+                  size="small"
+                  sx={{
+                    "& fieldset": {
+                      border: "none",
+                      borderRight: `1px solid ${colors.grey[900]}`,
+                      borderTopRightRadius: "0px",
+                      borderBottomRightRadius: "0px",
+                    },
+                  }}
+                >
+                  <MenuItem value="2">Mobile</MenuItem>
+                  <MenuItem value="3">Email</MenuItem>
+                  <MenuItem value="1">Office</MenuItem>
+                  <MenuItem value="4">Home</MenuItem>
+                  <MenuItem value="5">Direct</MenuItem>
+                  <MenuItem value="6">Fax</MenuItem>
+                  <MenuItem value="7">URL</MenuItem>
+                  <MenuItem value="8">Other</MenuItem>
+                </Select>
+              </InputAdornment>
+            }
+            label="Contact Details"
+          />
+        </FormControl>
+      ))}
+      <Box
+        sx={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "right",
+          p: "0px 12px",
+          mb: 2,
+        }}
+      >
+        <IconButton
+          aria-label="add details"
+          sx={{ p: "0px 4px", color: `${colors.blueAccent[100]}` }}
+          onClick={handleAddContactDetailsBox}
+        >
+          <AddIcon fontSize="small" />
+        </IconButton>
+        <Typography
+          onClick={handleAddContactDetailsBox}
+          sx={{ cursor: "pointer", color: `${colors.blueAccent[100]}` }}
+        >
+          Add More
+        </Typography>
+      </Box>
       <Box textAlign={"end"} width={"100%"} p={"10px 10px"}>
         <Button
           color="error"

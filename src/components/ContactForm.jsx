@@ -32,7 +32,6 @@ export default function ContactForm({ formExpanded, setFormExpanded }) {
   };
 
   const handleAddContactDetailsBox = () => {
-    console.log("add more clicked");
     setContactDetailsCount((prevCount) => prevCount + 1);
     setContactTypes((prevTypes) => [...prevTypes, "2"]);
   };

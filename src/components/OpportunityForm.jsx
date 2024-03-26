@@ -230,7 +230,6 @@ export default function OpportunityForm({ formExpanded, setFormExpanded }) {
               >
                 <MenuItem value="₹">₹</MenuItem>
                 <MenuItem value="$">$</MenuItem>
-                {/* Add more currencies as needed */}
               </Select>
             </InputAdornment>
           }

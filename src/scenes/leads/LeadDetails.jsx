@@ -8,6 +8,11 @@ import TaskForm from "../../components/TaskForm";
 import OpportunityForm from "../../components/OpportunityForm";
 import ContactItem from "../../components/ContactItem";
 import ContactForm from "../../components/ContactForm";
+import ProductItem from "../../components/ProductItem";
+import ProductForm from "../../components/ProductForm";
+import NotesBox from "../../components/NotesBox";
+import SmsBox from "../../components/SmsBox";
+import EmailBox from "../../components/EmailBox";
 
 const LeadDetails = () => {
   const theme = useTheme();
@@ -69,6 +74,14 @@ const LeadDetails = () => {
         </Box>
         <Box mt="25px" p="0 10px">
           <MyAccordian
+            name={"PRODUCT :"}
+            qty={3}
+            ItemComponent={ProductItem}
+            FormComponent={ProductForm}
+          />
+        </Box>
+        <Box mt="25px" p="0 10px">
+          <MyAccordian
             name={"TASK :"}
             qty={2}
             ItemComponent={TaskItem}
@@ -104,10 +117,19 @@ const LeadDetails = () => {
           justifyContent="space-between"
           alignItems="center"
         >
-          <Box>
-            <Typography variant="h5" fontWeight="600" color={colors.grey[100]}>
-              Right Side menu
-            </Typography>
+          <Box width={"100%"}>
+            <Box>
+              <Typography
+                variant="h5"
+                fontWeight="600"
+                color={colors.grey[100]}
+              >
+                Top Filters
+              </Typography>
+            </Box>
+            <NotesBox />
+            <SmsBox />
+            <EmailBox />
           </Box>
         </Box>
       </Box>

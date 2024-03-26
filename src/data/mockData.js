@@ -54,6 +54,87 @@ export const mockedUser = [
   },
 ];
 
+export const mockedCategory = [
+  {
+    id: 1,
+    name: "Business Certification",
+  },
+  {
+    id: 2,
+    name: "Start Company",
+  },
+  {
+    id: 3,
+    name: "Financial Services",
+  },
+  {
+    id: 4,
+    name: "Pollution Advisory",
+  },
+  {
+    id: 5,
+    name: "License & Certification",
+  },
+  {
+    id: 6,
+    name: "Changes In Business",
+  },
+];
+
+export const mockedProduct1 = [
+  {
+    id: 1,
+    name: "Private Limited Company",
+  },
+  {
+    id: 2,
+    name: "Public Limited Company",
+  },
+  {
+    id: 3,
+    name: "Indian Subsidiary Company",
+  },
+  {
+    id: 4,
+    name: "One Person Comapny",
+  },
+  {
+    id: 5,
+    name: "NBFC registration",
+  },
+  {
+    id: 6,
+    name: "Payment Wallet Registration",
+  },
+];
+
+export const mockedProduct2 = [
+  {
+    id: 7,
+    name: "NGO Registration",
+  },
+  {
+    id: 8,
+    name: "Society Registration",
+  },
+  {
+    id: 9,
+    name: "FCRA Registration",
+  },
+  {
+    id: 10,
+    name: "Nidhi Company registration",
+  },
+  {
+    id: 11,
+    name: "Full fledge money changer",
+  },
+  {
+    id: 12,
+    name: "UAE",
+  },
+];
+
 export const mockDataLeads = [
   {
     id: 1,

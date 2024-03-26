@@ -7,7 +7,6 @@ import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Avatar from "@mui/material/Avatar";
 import { tokens } from "../theme";
 import { useTheme } from "@emotion/react";
-import CheckOutlinedIcon from "@mui/icons-material/CheckOutlined";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import MoreVertOutlinedIcon from "@mui/icons-material/MoreVertOutlined";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
@@ -19,7 +18,7 @@ import {
 } from "@mui/material";
 import AvatarName from "./AvatarName";
 
-export default function TaskItem() {
+export default function ProductItem() {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const [anchorEl, setAnchorEl] = React.useState(null);
@@ -34,15 +33,15 @@ export default function TaskItem() {
 
   return (
     <List sx={{ width: "100%", maxWidth: 360, bgcolor: colors.white[900] }}>
-      <ListItem key={"taskItem1"} alignItems="flex-start">
+      <ListItem key={"productItem1"} alignItems="flex-start">
         <ListItemAvatar>
           <Avatar>
             <AvatarName name={"Remy Sharp"} />
           </Avatar>
         </ListItemAvatar>
         <ListItemText
-          primary="Follow up with Dave"
-          secondary="16/03/2024 10:15 AM"
+          primary="BIS Registration"
+          secondary="Business certificate"
         />
         <ListItemSecondaryAction>
           <IconButton onClick={handleMenuOpen}>
@@ -56,10 +55,6 @@ export default function TaskItem() {
             <MenuItem>
               <EditOutlinedIcon fontSize="small" />
               &nbsp;Edit
-            </MenuItem>
-            <MenuItem>
-              <CheckOutlinedIcon fontSize="small" />
-              &nbsp;Done
             </MenuItem>
             <MenuItem>
               <DeleteOutlineOutlinedIcon fontSize="small" />
@@ -69,16 +64,13 @@ export default function TaskItem() {
         </ListItemSecondaryAction>
       </ListItem>
       <Divider variant="inset" component="li" />
-      <ListItem key={"taskItem2"} alignItems="flex-start">
+      <ListItem key={"productItem2"} alignItems="flex-start">
         <ListItemAvatar>
           <Avatar>
             <AvatarName name={"Travis Howard"} />
           </Avatar>
         </ListItemAvatar>
-        <ListItemText
-          primary="Call to avinash regarding GST Registration"
-          secondary="20/03/2024 12:00 PM"
-        />
+        <ListItemText primary="FSSAI" secondary="Business certification" />
         <ListItemSecondaryAction>
           <IconButton onClick={handleMenuOpen}>
             <MoreVertOutlinedIcon fontSize="small" />
@@ -93,8 +85,32 @@ export default function TaskItem() {
               &nbsp;Edit
             </MenuItem>
             <MenuItem>
-              <CheckOutlinedIcon fontSize="small" />
-              &nbsp;Done
+              <DeleteOutlineOutlinedIcon fontSize="small" />
+              &nbsp;Delete
+            </MenuItem>
+          </Menu>
+        </ListItemSecondaryAction>
+      </ListItem>
+      <Divider variant="inset" component="li" />
+      <ListItem key={"productItem3"} alignItems="flex-start">
+        <ListItemAvatar>
+          <Avatar>
+            <AvatarName name={"Ajay Kumar"} />
+          </Avatar>
+        </ListItemAvatar>
+        <ListItemText primary="CDSCO" secondary="Business certification" />
+        <ListItemSecondaryAction>
+          <IconButton onClick={handleMenuOpen}>
+            <MoreVertOutlinedIcon fontSize="small" />
+          </IconButton>
+          <Menu
+            anchorEl={anchorEl}
+            open={Boolean(anchorEl)}
+            onClose={handleMenuClose}
+          >
+            <MenuItem>
+              <EditOutlinedIcon fontSize="small" />
+              &nbsp;Edit
             </MenuItem>
             <MenuItem>
               <DeleteOutlineOutlinedIcon fontSize="small" />

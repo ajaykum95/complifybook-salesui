@@ -44,6 +44,8 @@ export default function EmailBox() {
   const [sendTo, setSendTo] = React.useState([]);
   const [sendToCc, setSendToCc] = React.useState([]);
   const [sendToBcc, setSendToBcc] = React.useState([]);
+  const [showCc, setShowCc] = React.useState(false);
+  const [showBcc, setShowBcc] = React.useState(false);
 
   const handleChangeSendTo = (event) => {
     const {
@@ -66,6 +68,14 @@ export default function EmailBox() {
     setSendToBcc(typeof value === "string" ? value.split(",") : value);
   };
 
+  const handleAddCc = () => {
+    setShowCc(!showCc);
+  };
+
+  const handleAddBcc = () => {
+    setShowBcc(!showBcc);
+  };
+
   return (
     <Box
       sx={{
@@ -75,152 +85,199 @@ export default function EmailBox() {
         mb: 1,
       }}
     >
-      <FormControl
+      <Box
         sx={{
-          margin: "2ch 0 0 0",
-          minWidth: 120,
-          bgcolor: colors.white[900],
+          display: "flex",
+          width: "95%",
+          alignItems: "center",
+          justifyContent: "space-between",
         }}
-        fullWidth
       >
-        <InputLabel id="demo-multiple-chip-label" size="small">
-          To:
-        </InputLabel>
-        <Select
-          labelId="demo-multiple-chip-label"
-          id="demo-multiple-chip"
-          label="To:"
-          size="small"
-          sx={{ mb: 1 }}
-          multiple
-          value={sendTo}
-          onChange={handleChangeSendTo}
-          input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
-          renderValue={(selected) => (
-            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-              {selected.map((value) => {
-                const selectedContact = mockDataContacts.find(
-                  (contact) => contact.id === value
-                );
-                return (
-                  <Chip
-                    key={value}
-                    label={`${selectedContact.name} @ ${selectedContact.email}`}
-                  />
-                );
-              })}
-            </Box>
-          )}
-          MenuProps={MenuProps}
+        <FormControl
+          sx={{
+            margin: "2ch 0 0 0",
+            minWidth: 120,
+            maxWidth: "77%",
+            display: "flex",
+            bgcolor: colors.white[900],
+          }}
+          fullWidth
         >
-          {mockDataContacts.map((contact) => (
-            <MenuItem
-              key={contact.id}
-              value={contact.id}
-              style={getStyles(contact.name, sendTo, theme)}
-            >
-              {contact.name} @ {contact.email}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-      <FormControl
-        sx={{
-          margin: "1ch 0 0",
-          minWidth: 120,
-          mb: 1,
-          bgcolor: colors.white[900],
-        }}
-        fullWidth
-      >
-        <InputLabel id="demo-multiple-chip-label" size="small">
-          CC:
-        </InputLabel>
-        <Select
-          labelId="demo-multiple-chip-label"
-          id="demo-multiple-chip"
-          label="CC:"
-          size="small"
-          multiple
-          value={sendToCc}
-          onChange={handleChangeCc}
-          input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
-          renderValue={(selected) => (
-            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-              {selected.map((value) => {
-                const selectedContact = mockDataContacts.find(
-                  (contact) => contact.id === value
-                );
-                return (
-                  <Chip
-                    key={value}
-                    label={`${selectedContact.name} @ ${selectedContact.email}`}
-                  />
-                );
-              })}
-            </Box>
-          )}
-          MenuProps={MenuProps}
+          <InputLabel id="demo-multiple-chip-label" size="small">
+            To:
+          </InputLabel>
+          <Select
+            labelId="demo-multiple-chip-label"
+            id="demo-multiple-chip"
+            label="To:"
+            size="small"
+            sx={{ mb: 1 }}
+            multiple
+            value={sendTo}
+            onChange={handleChangeSendTo}
+            input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
+            renderValue={(selected) => (
+              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+                {selected.map((value) => {
+                  const selectedContact = mockDataContacts.find(
+                    (contact) => contact.id === value
+                  );
+                  return (
+                    <Chip
+                      key={value}
+                      label={`${selectedContact.name} @ ${selectedContact.email}`}
+                    />
+                  );
+                })}
+              </Box>
+            )}
+            MenuProps={MenuProps}
+          >
+            {mockDataContacts.map((contact) => (
+              <MenuItem
+                key={contact.id}
+                value={contact.id}
+                style={getStyles(contact.name, sendTo, theme)}
+              >
+                {contact.name} @ {contact.email}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+        <Box sx={{ display: "flex", maxWidth: "20%", maxHeight: "25px" }}>
+          <Button
+            size="small"
+            variant="outlined"
+            sx={{ color: colors.blue[400], mr: 1 }}
+            onClick={handleAddCc}
+          >
+            Add CC
+          </Button>
+          <Button
+            size="small"
+            variant="outlined"
+            sx={{ color: colors.blue[400] }}
+            onClick={handleAddBcc}
+          >
+            Add Bcc
+          </Button>
+        </Box>
+      </Box>
+      {showCc && (
+        <FormControl
+          sx={{
+            margin: "1ch 0 0",
+            minWidth: 120,
+            mb: 1,
+            bgcolor: colors.white[900],
+          }}
+          fullWidth
         >
-          {mockDataContacts.map((contact) => (
-            <MenuItem
-              key={contact.id}
-              value={contact.id}
-              style={getStyles(contact.name, sendToCc, theme)}
-            >
-              {contact.name} @ {contact.email}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-      <FormControl
-        sx={{
-          margin: "1ch 0 0",
-          minWidth: 120,
-          mb: 1,
-          bgcolor: colors.white[900],
-        }}
-        fullWidth
-      >
-        <InputLabel id="demo-multiple-chip-label" size="small">
-          BCC:
-        </InputLabel>
-        <Select
-          labelId="demo-multiple-chip-label"
-          id="demo-multiple-chip"
-          label="BCC:"
-          size="small"
-          multiple
-          value={sendToBcc}
-          onChange={handleChangeBcc}
-          input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
-          renderValue={(selected) => (
-            <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
-              {selected.map((value) => {
-                const selectedContact = mockDataContacts.find(
-                  (contact) => contact.id === value
-                );
-                return (
-                  <Chip
-                    key={value}
-                    label={`${selectedContact.name} @ ${selectedContact.email}`}
-                  />
-                );
-              })}
-            </Box>
-          )}
-          MenuProps={MenuProps}
+          <InputLabel id="demo-multiple-chip-label" size="small">
+            CC:
+          </InputLabel>
+          <Select
+            labelId="demo-multiple-chip-label"
+            id="demo-multiple-chip"
+            label="CC:"
+            size="small"
+            multiple
+            value={sendToCc}
+            onChange={handleChangeCc}
+            input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
+            renderValue={(selected) => (
+              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+                {selected.map((value) => {
+                  const selectedContact = mockDataContacts.find(
+                    (contact) => contact.id === value
+                  );
+                  return (
+                    <Chip
+                      key={value}
+                      label={`${selectedContact.name} @ ${selectedContact.email}`}
+                    />
+                  );
+                })}
+              </Box>
+            )}
+            MenuProps={MenuProps}
+          >
+            {mockDataContacts.map((contact) => (
+              <MenuItem
+                key={contact.id}
+                value={contact.id}
+                style={getStyles(contact.name, sendToCc, theme)}
+              >
+                {contact.name} @ {contact.email}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+      )}
+      {showBcc && (
+        <FormControl
+          sx={{
+            margin: "1ch 0 0",
+            minWidth: 120,
+            mb: 1,
+            bgcolor: colors.white[900],
+          }}
+          fullWidth
         >
-          {mockDataContacts.map((contact) => (
-            <MenuItem
-              key={contact.id}
-              value={contact.id}
-              style={getStyles(contact.name, sendToBcc, theme)}
-            >
-              {contact.name} @ {contact.email}
-            </MenuItem>
-          ))}
-        </Select>
+          <InputLabel id="demo-multiple-chip-label" size="small">
+            BCC:
+          </InputLabel>
+          <Select
+            labelId="demo-multiple-chip-label"
+            id="demo-multiple-chip"
+            label="BCC:"
+            size="small"
+            multiple
+            value={sendToBcc}
+            onChange={handleChangeBcc}
+            input={<OutlinedInput id="select-multiple-chip" label="Chip" />}
+            renderValue={(selected) => (
+              <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
+                {selected.map((value) => {
+                  const selectedContact = mockDataContacts.find(
+                    (contact) => contact.id === value
+                  );
+                  return (
+                    <Chip
+                      key={value}
+                      label={`${selectedContact.name} @ ${selectedContact.email}`}
+                    />
+                  );
+                })}
+              </Box>
+            )}
+            MenuProps={MenuProps}
+          >
+            {mockDataContacts.map((contact) => (
+              <MenuItem
+                key={contact.id}
+                value={contact.id}
+                style={getStyles(contact.name, sendToBcc, theme)}
+              >
+                {contact.name} @ {contact.email}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+      )}
+      <FormControl fullWidth sx={{ mt: 1, bgcolor: colors.white[900] }}>
+        <InputLabel
+          htmlFor="outlined-contact-subject"
+          variant="outlined"
+          size="small"
+        >
+          Subject
+        </InputLabel>
+        <OutlinedInput
+          id="outlined-contact-subject"
+          label="Subject"
+          size="small"
+        />
       </FormControl>
       <FormControl
         sx={{

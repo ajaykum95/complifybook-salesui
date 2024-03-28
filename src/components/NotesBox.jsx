@@ -20,7 +20,7 @@ export default function NotesBox() {
         border: `1px solid ${colors.white[400]}`,
         p: "0 1ch",
         bgcolor: colors.white[900],
-        mb: 1,
+        width: "100%",
       }}
     >
       <FormControl
@@ -28,7 +28,6 @@ export default function NotesBox() {
           margin: "1ch 0 0",
           minWidth: 120,
           mt: 2,
-          bgcolor: colors.white[900],
         }}
         fullWidth
       >

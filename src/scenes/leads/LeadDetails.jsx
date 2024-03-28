@@ -1,4 +1,13 @@
-import { Box, IconButton, Typography, useTheme } from "@mui/material";
+import {
+  Box,
+  Divider,
+  IconButton,
+  List,
+  ListItem,
+  ListItemIcon,
+  Typography,
+  useTheme,
+} from "@mui/material";
 import { tokens } from "../../theme";
 import PinDropOutlinedIcon from "@mui/icons-material/PinDropOutlined";
 import MyAccordian from "../../components/MyAccordian";
@@ -13,6 +22,9 @@ import ProductForm from "../../components/ProductForm";
 import NotesBox from "../../components/NotesBox";
 import SmsBox from "../../components/SmsBox";
 import EmailBox from "../../components/EmailBox";
+import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
+import SmsOutlinedIcon from "@mui/icons-material/SmsOutlined";
+import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
 
 const LeadDetails = () => {
   const theme = useTheme();
@@ -112,7 +124,6 @@ const LeadDetails = () => {
       >
         <Box
           mt="25px"
-          p="0 30px"
           display="flex "
           justifyContent="space-between"
           alignItems="center"
@@ -127,9 +138,32 @@ const LeadDetails = () => {
                 Top Filters
               </Typography>
             </Box>
-            <NotesBox />
-            <SmsBox />
-            <EmailBox />
+            <List sx={{ p: "0 6ch" }}>
+              <ListItem key={"notes"}>
+                <ListItemIcon sx={{ position: "absolute", top: 10, left: -39 }}>
+                  <IconButton sx={{ border: `1px solid ${colors.grey[800]}` }}>
+                    <DescriptionOutlinedIcon />
+                  </IconButton>
+                </ListItemIcon>
+                <NotesBox />
+              </ListItem>
+              <ListItem key={"sms"}>
+                <ListItemIcon sx={{ position: "absolute", top: 10, left: -39 }}>
+                  <IconButton sx={{ border: `1px solid ${colors.grey[800]}` }}>
+                    <SmsOutlinedIcon />
+                  </IconButton>
+                </ListItemIcon>
+                <SmsBox />
+              </ListItem>
+              <ListItem key={"email"}>
+                <ListItemIcon sx={{ position: "absolute", top: 10, left: -39 }}>
+                  <IconButton sx={{ border: `1px solid ${colors.grey[800]}` }}>
+                    <EmailOutlinedIcon />
+                  </IconButton>
+                </ListItemIcon>
+                <EmailBox />
+              </ListItem>
+            </List>
           </Box>
         </Box>
       </Box>

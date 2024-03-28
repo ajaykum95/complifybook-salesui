@@ -237,6 +237,21 @@ export const mockDataTeam = [
   },
 ];
 
+export const mockTemplateData = [
+  {
+    id: 1,
+    name: "Proposal Template",
+  },
+  {
+    id: 2,
+    name: "Welcome Template",
+  },
+  {
+    id: 3,
+    name: "Review Template",
+  },
+];
+
 export const mockDataContacts = [
   {
     id: 1,

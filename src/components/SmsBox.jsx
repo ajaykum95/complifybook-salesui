@@ -31,7 +31,7 @@ export default function SmsBox() {
         border: `1px solid ${colors.white[400]}`,
         p: "0 1ch",
         bgcolor: colors.white[900],
-        mb: 1,
+        width:"100%"
       }}
     >
       <FormControl
@@ -39,7 +39,6 @@ export default function SmsBox() {
           margin: "1ch 0 0",
           minWidth: 120,
           mt: 2,
-          bgcolor: colors.white[900],
         }}
         fullWidth
       >
@@ -83,7 +82,7 @@ export default function SmsBox() {
           </Button>
           <Button
             variant="outlined"
-            sx={{ height: "5ch", ml: 1 }}
+            sx={{ height: "5ch", ml: 1, color: colors.white[100] }}
             startIcon={<WatchLaterOutlinedIcon />}
           >
             Send Later
@@ -94,7 +93,10 @@ export default function SmsBox() {
           <IconButton sx={{ color: colors.redAccent[400] }}>
             <DeleteOutlinedIcon />
           </IconButton>
-          <Button variant="outlined" sx={{ height: "5ch", ml: 1 }}>
+          <Button
+            variant="outlined"
+            sx={{ height: "5ch", ml: 1, color: colors.white[100] }}
+          >
             Save Draft
           </Button>
         </Box>

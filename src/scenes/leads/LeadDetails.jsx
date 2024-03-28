@@ -1,6 +1,5 @@
 import {
   Box,
-  Divider,
   IconButton,
   List,
   ListItem,
@@ -25,6 +24,13 @@ import EmailBox from "../../components/EmailBox";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 import SmsOutlinedIcon from "@mui/icons-material/SmsOutlined";
 import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
+import TaskBox from "../../components/TaskBox";
+import TaskAltOutlinedIcon from "@mui/icons-material/TaskAltOutlined";
+import NotesBoxActivity from "../../components/NotesBoxActivity";
+import EmojiEventsOutlinedIcon from "@mui/icons-material/EmojiEventsOutlined";
+import OpportunityBox from "../../components/OpportunityBox";
+import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
+import CallBox from "../../components/CallBox";
 
 const LeadDetails = () => {
   const theme = useTheme();
@@ -140,28 +146,235 @@ const LeadDetails = () => {
             </Box>
             <List sx={{ p: "0 6ch" }}>
               <ListItem key={"notes"}>
+                <Typography
+                  sx={{
+                    position: "absolute",
+                    top: "24px",
+                    width: "18px",
+                    height: "5px",
+                    left: -2,
+                    borderBottom: `1px solid ${colors.grey[700]}`,
+                  }}
+                />
+                <Typography
+                  sx={{
+                    position: "absolute",
+                    top: "46px",
+                    width: "18px",
+                    height: "calc(100% - 35px)",
+                    left: "-39px",
+                    borderRight: `1px solid ${colors.grey[700]}`,
+                  }}
+                />
                 <ListItemIcon sx={{ position: "absolute", top: 10, left: -39 }}>
-                  <IconButton sx={{ border: `1px solid ${colors.grey[800]}` }}>
+                  <IconButton
+                    sx={{
+                      bgcolor: colors.grey[800],
+                      color: colors.white[900],
+                    }}
+                  >
                     <DescriptionOutlinedIcon />
                   </IconButton>
                 </ListItemIcon>
                 <NotesBox />
               </ListItem>
               <ListItem key={"sms"}>
+                <Typography
+                  sx={{
+                    position: "absolute",
+                    top: "24px",
+                    width: "18px",
+                    height: "5px",
+                    left: -2,
+                    borderBottom: `1px solid ${colors.grey[700]}`,
+                  }}
+                />
+                <Typography
+                  sx={{
+                    position: "absolute",
+                    top: "46px",
+                    width: "18px",
+                    height: "calc(100% - 35px)",
+                    left: "-39px",
+                    borderRight: `1px solid ${colors.grey[700]}`,
+                  }}
+                />
                 <ListItemIcon sx={{ position: "absolute", top: 10, left: -39 }}>
-                  <IconButton sx={{ border: `1px solid ${colors.grey[800]}` }}>
+                  <IconButton
+                    sx={{
+                      bgcolor: colors.redAccent[800],
+                      color: colors.white[900],
+                    }}
+                  >
                     <SmsOutlinedIcon />
                   </IconButton>
                 </ListItemIcon>
                 <SmsBox />
               </ListItem>
               <ListItem key={"email"}>
+                <Typography
+                  sx={{
+                    position: "absolute",
+                    top: "24px",
+                    width: "18px",
+                    height: "5px",
+                    left: -2,
+                    borderBottom: `1px solid ${colors.grey[700]}`,
+                  }}
+                />
+                <Typography
+                  sx={{
+                    position: "absolute",
+                    top: "46px",
+                    width: "18px",
+                    height: "calc(100% - 35px)",
+                    left: "-39px",
+                    borderRight: `1px solid ${colors.grey[700]}`,
+                  }}
+                />
                 <ListItemIcon sx={{ position: "absolute", top: 10, left: -39 }}>
-                  <IconButton sx={{ border: `1px solid ${colors.grey[800]}` }}>
+                  <IconButton
+                    sx={{
+                      bgcolor: colors.greenAccent[800],
+                      color: colors.white[900],
+                    }}
+                  >
                     <EmailOutlinedIcon />
                   </IconButton>
                 </ListItemIcon>
                 <EmailBox />
+              </ListItem>
+              <ListItem key={"task"}>
+                <Typography
+                  sx={{
+                    position: "absolute",
+                    top: "24px",
+                    width: "18px",
+                    height: "5px",
+                    left: -2,
+                    borderBottom: `1px solid ${colors.grey[700]}`,
+                  }}
+                />
+                <Typography
+                  sx={{
+                    position: "absolute",
+                    top: "46px",
+                    width: "18px",
+                    height: "calc(100% - 35px)",
+                    left: "-39px",
+                    borderRight: `1px solid ${colors.grey[700]}`,
+                  }}
+                />
+                <ListItemIcon sx={{ position: "absolute", top: 10, left: -39 }}>
+                  <IconButton
+                    sx={{
+                      bgcolor: colors.redAccent[300],
+                      color: colors.white[900],
+                    }}
+                  >
+                    <TaskAltOutlinedIcon />
+                  </IconButton>
+                </ListItemIcon>
+                <TaskBox />
+              </ListItem>
+              <ListItem key={"notesActivity"}>
+                <Typography
+                  sx={{
+                    position: "absolute",
+                    top: "24px",
+                    width: "18px",
+                    height: "5px",
+                    left: -2,
+                    borderBottom: `1px solid ${colors.grey[700]}`,
+                  }}
+                />
+                <Typography
+                  sx={{
+                    position: "absolute",
+                    top: "46px",
+                    width: "18px",
+                    height: "calc(100% - 35px)",
+                    left: "-39px",
+                    borderRight: `1px solid ${colors.grey[700]}`,
+                  }}
+                />
+                <ListItemIcon sx={{ position: "absolute", top: 10, left: -39 }}>
+                  <IconButton
+                    sx={{
+                      bgcolor: colors.grey[800],
+                      color: colors.white[900],
+                    }}
+                  >
+                    <DescriptionOutlinedIcon />
+                  </IconButton>
+                </ListItemIcon>
+                <NotesBoxActivity />
+              </ListItem>
+              <ListItem key={"callActivity"}>
+                <Typography
+                  sx={{
+                    position: "absolute",
+                    top: "24px",
+                    width: "18px",
+                    height: "5px",
+                    left: -2,
+                    borderBottom: `1px solid ${colors.grey[700]}`,
+                  }}
+                />
+                <Typography
+                  sx={{
+                    position: "absolute",
+                    top: "46px",
+                    width: "18px",
+                    height: "calc(100% - 35px)",
+                    left: "-39px",
+                    borderRight: `1px solid ${colors.grey[700]}`,
+                  }}
+                />
+                <ListItemIcon sx={{ position: "absolute", top: 10, left: -39 }}>
+                  <IconButton
+                    sx={{
+                      bgcolor: colors.greenAccent[700],
+                      color: colors.white[900],
+                    }}
+                  >
+                    <EmojiEventsOutlinedIcon />
+                  </IconButton>
+                </ListItemIcon>
+                <OpportunityBox />
+              </ListItem>
+              <ListItem key={"callActivity"}>
+                <Typography
+                  sx={{
+                    position: "absolute",
+                    top: "24px",
+                    width: "18px",
+                    height: "5px",
+                    left: -2,
+                    borderBottom: `1px solid ${colors.grey[700]}`,
+                  }}
+                />
+                <Typography
+                  sx={{
+                    position: "absolute",
+                    top: "46px",
+                    width: "18px",
+                    height: "calc(100% - 35px)",
+                    left: "-39px",
+                    borderRight: `1px solid ${colors.grey[700]}`,
+                  }}
+                />
+                <ListItemIcon sx={{ position: "absolute", top: 10, left: -39 }}>
+                  <IconButton
+                    sx={{
+                      bgcolor: colors.greenAccent[700],
+                      color: colors.white[900],
+                    }}
+                  >
+                    <CallOutlinedIcon />
+                  </IconButton>
+                </ListItemIcon>
+                <CallBox />
               </ListItem>
             </List>
           </Box>

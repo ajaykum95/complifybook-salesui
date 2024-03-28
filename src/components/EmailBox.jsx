@@ -103,7 +103,7 @@ export default function EmailBox() {
       sx={{
         border: `1px solid ${colors.white[400]}`,
         bgcolor: colors.white[900],
-        width:"100%"
+        width: "100%",
       }}
     >
       <Box
@@ -145,7 +145,12 @@ export default function EmailBox() {
               Draft
             </Typography>
           </Box>
-          <Typography color={colors.primary[700]}>
+          <Typography
+            sx={{
+              color: colors.primary[700],
+              borderBottom: `1px solid ${colors.primary[900]}`,
+            }}
+          >
             less than a minute ago
           </Typography>
         </Box>

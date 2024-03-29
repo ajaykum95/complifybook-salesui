@@ -33,7 +33,7 @@ export default function OpportunityBox() {
           <Box
             sx={{
               display: "flex",
-              border: `1px solid ${colors.grey[900]}`,
+              border: `1px solid ${colors.white[400]}`,
               borderRadius: "10px",
             }}
           >
@@ -59,7 +59,15 @@ export default function OpportunityBox() {
         </Box>
         <Box sx={{ display: "flex", alignItems: "center", maxWidth: "20%" }}>
           <Typography>Ajay Kumar</Typography>
-          <Avatar sx={{ ml: 1, width: 25, height: 25, fontSize: 12 }}>
+          <Avatar
+            sx={{
+              ml: 1,
+              width: 25,
+              height: 25,
+              fontSize: 12,
+              color: colors.white[500],
+            }}
+          >
             <AvatarName name={"Ajay Kumar"} />
           </Avatar>
         </Box>
@@ -68,7 +76,7 @@ export default function OpportunityBox() {
         <Box
           sx={{
             display: "flex",
-            border: `1px solid ${colors.grey[900]}`,
+            border: `1px solid ${colors.white[400]}`,
             borderRadius: "10px",
             mr: 1,
           }}
@@ -89,8 +97,8 @@ export default function OpportunityBox() {
         </Box>
         <Typography
           sx={{
-            color: colors.primary[700],
-            borderBottom: `1px solid ${colors.primary[900]}`,
+            color: colors.white[300],
+            borderBottom: `1px dotted ${colors.white[400]}`,
           }}
         >
           5 days ago

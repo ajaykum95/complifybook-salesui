@@ -35,7 +35,7 @@ export default function ProductItem() {
     <List sx={{ width: "100%", maxWidth: 360, bgcolor: colors.white[900] }}>
       <ListItem key={"productItem1"} alignItems="flex-start">
         <ListItemAvatar>
-          <Avatar>
+          <Avatar sx={{ color: colors.white[500] }}>
             <AvatarName name={"Remy Sharp"} />
           </Avatar>
         </ListItemAvatar>
@@ -66,7 +66,7 @@ export default function ProductItem() {
       <Divider variant="inset" component="li" />
       <ListItem key={"productItem2"} alignItems="flex-start">
         <ListItemAvatar>
-          <Avatar>
+          <Avatar sx={{ color: colors.white[500] }}>
             <AvatarName name={"Travis Howard"} />
           </Avatar>
         </ListItemAvatar>
@@ -94,7 +94,7 @@ export default function ProductItem() {
       <Divider variant="inset" component="li" />
       <ListItem key={"productItem3"} alignItems="flex-start">
         <ListItemAvatar>
-          <Avatar>
+          <Avatar sx={{ color: colors.white[500] }}>
             <AvatarName name={"Ajay Kumar"} />
           </Avatar>
         </ListItemAvatar>

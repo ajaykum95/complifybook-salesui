@@ -23,8 +23,8 @@ export default function TaskBox() {
         <Typography sx={{ mr: 1 }}>Task Completed: Follow up</Typography>
         <Typography
           sx={{
-            color: colors.primary[700],
-            borderBottom: `1px solid ${colors.primary[900]}`,
+            color: colors.white[300],
+            borderBottom: `1px dotted ${colors.white[400]}`,
           }}
         >
           5 days ago

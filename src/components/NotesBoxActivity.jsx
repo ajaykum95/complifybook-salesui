@@ -26,19 +26,27 @@ export default function NotesBoxActivity() {
         <Typography>I had a call here, It went well.</Typography>
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <Typography>Ajay Kumar</Typography>
-          <Avatar sx={{ ml: 1, width: 25, height: 25, fontSize: 12 }}>
+          <Avatar
+            sx={{
+              ml: 1,
+              width: 25,
+              height: 25,
+              fontSize: 12,
+              color: colors.white[500],
+            }}
+          >
             <AvatarName name={"Ajay Kumar"} />
           </Avatar>
         </Box>
       </Box>
       <Box sx={{ display: "flex", alignItems: "center", mt: 1.5 }}>
-        <Typography sx={{ color: colors.primary[600], mr: 1 }}>
+        <Typography sx={{ color: colors.white[200], mr: 1, fontWeight: 600 }}>
           Notes Written
         </Typography>
         <Typography
           sx={{
-            color: colors.primary[700],
-            borderBottom: `1px solid ${colors.primary[900]}`,
+            color: colors.white[300],
+            borderBottom: `1px dotted ${colors.white[400]}`,
           }}
         >
           2 months ago

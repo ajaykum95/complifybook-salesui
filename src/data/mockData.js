@@ -1,5 +1,15 @@
 import { tokens } from "../theme";
 
+export const mockedEmailActivity1 = {
+  id: 1,
+  subject: "It was great meeting you",
+};
+
+export const mockedEmailActivity2 = {
+  id: 10,
+  subject: "Thank you for your time",
+};
+
 export const mockedPipeline = [
   {
     id: 1,

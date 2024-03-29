@@ -117,7 +117,15 @@ export default function EmailBox() {
         <Typography>Proposal of NBFC Registration</Typography>
         <Box sx={{ display: "flex", alignItems: "center" }}>
           <Typography>Ajay Kumar</Typography>
-          <Avatar sx={{ ml: 1, width: 30, height: 30, fontSize: 12 }}>
+          <Avatar
+            sx={{
+              ml: 1,
+              width: 30,
+              height: 30,
+              fontSize: 12,
+              color: colors.white[500],
+            }}
+          >
             <AvatarName name={"Ajay Kumar"} />
           </Avatar>
         </Box>
@@ -147,8 +155,7 @@ export default function EmailBox() {
           </Box>
           <Typography
             sx={{
-              color: colors.primary[700],
-              borderBottom: `1px solid ${colors.primary[900]}`,
+              color: colors.white[300],
             }}
           >
             less than a minute ago

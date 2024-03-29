@@ -2,9 +2,10 @@ import * as React from "react";
 import { Avatar, Box, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../theme";
 import AvatarName from "./AvatarName";
-import StraightOutlinedIcon from "@mui/icons-material/StraightOutlined";
+import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
+import EmailBoxAccordian from "./EmailBoxAccordian";
 
-export default function CallBox() {
+export default function EmailBoxActivity({ emailActivity, user }) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -12,7 +13,6 @@ export default function CallBox() {
     <Box
       sx={{
         border: `1px solid ${colors.white[400]}`,
-        p: 1,
         bgcolor: colors.white[900],
         width: "100%",
       }}
@@ -22,13 +22,18 @@ export default function CallBox() {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
+          p: "3px 6px 3px 6px",
         }}
       >
-        <Typography>
-          They seems like a good fit. We will send them a proposal later today.
-        </Typography>
+        <Typography>{emailActivity.subject}</Typography>
         <Box sx={{ display: "flex", alignItems: "center" }}>
-          <Typography>Liz</Typography>
+          <IconButton sx={{ p: "2px", mr: 1 }}>
+            <DeleteOutlineOutlinedIcon
+              fontSize="small"
+              sx={{ color: colors.white[400] }}
+            />
+          </IconButton>
+          <Typography>{user}</Typography>
           <Avatar
             sx={{
               ml: 1,
@@ -38,27 +43,12 @@ export default function CallBox() {
               color: colors.white[500],
             }}
           >
-            <AvatarName name={"Liz Agnya"} />
+            <AvatarName name={user} />
           </Avatar>
         </Box>
       </Box>
-      <Box sx={{ display: "flex", alignItems: "center", mt: 1.5 }}>
-        <StraightOutlinedIcon
-          sx={{ transform: "rotate(45deg)", color: colors.blue[500], mr: 1 }}
-        />
-
-        <Typography sx={{ color: colors.white[200], mr: 1, fontWeight: 600 }}>
-          Called Ajay Kumar - 5 Minutes
-        </Typography>
-        <Typography
-          sx={{
-            color: colors.white[300],
-            borderBottom: `1px dotted ${colors.white[400]}`,
-          }}
-        >
-          2 months ago
-        </Typography>
-      </Box>
+      <EmailBoxAccordian />
+      <EmailBoxAccordian />
     </Box>
   );
 }

@@ -31,6 +31,11 @@ import EmojiEventsOutlinedIcon from "@mui/icons-material/EmojiEventsOutlined";
 import OpportunityBox from "../../components/OpportunityBox";
 import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
 import CallBox from "../../components/CallBox";
+import EmailBoxActivity from "../../components/EmailBoxActivity";
+import {
+  mockedEmailActivity1,
+  mockedEmailActivity2,
+} from "../../data/mockData";
 
 const LeadDetails = () => {
   const theme = useTheme();
@@ -153,7 +158,7 @@ const LeadDetails = () => {
                     width: "18px",
                     height: "5px",
                     left: -2,
-                    borderBottom: `1px solid ${colors.grey[700]}`,
+                    borderBottom: `1px solid ${colors.white[400]}`,
                   }}
                 />
                 <Typography
@@ -163,14 +168,15 @@ const LeadDetails = () => {
                     width: "18px",
                     height: "calc(100% - 35px)",
                     left: "-39px",
-                    borderRight: `1px solid ${colors.grey[700]}`,
+                    borderRight: `1px solid ${colors.white[400]}`,
                   }}
                 />
                 <ListItemIcon sx={{ position: "absolute", top: 10, left: -39 }}>
                   <IconButton
                     sx={{
                       bgcolor: colors.grey[800],
-                      color: colors.white[900],
+                      color: colors.white[500],
+                      border: `1px solid ${colors.white[400]}`,
                     }}
                   >
                     <DescriptionOutlinedIcon />
@@ -186,7 +192,7 @@ const LeadDetails = () => {
                     width: "18px",
                     height: "5px",
                     left: -2,
-                    borderBottom: `1px solid ${colors.grey[700]}`,
+                    borderBottom: `1px solid ${colors.white[400]}`,
                   }}
                 />
                 <Typography
@@ -196,14 +202,15 @@ const LeadDetails = () => {
                     width: "18px",
                     height: "calc(100% - 35px)",
                     left: "-39px",
-                    borderRight: `1px solid ${colors.grey[700]}`,
+                    borderRight: `1px solid ${colors.white[400]}`,
                   }}
                 />
                 <ListItemIcon sx={{ position: "absolute", top: 10, left: -39 }}>
                   <IconButton
                     sx={{
                       bgcolor: colors.redAccent[800],
-                      color: colors.white[900],
+                      color: colors.white[500],
+                      border: `1px solid ${colors.white[400]}`,
                     }}
                   >
                     <SmsOutlinedIcon />
@@ -219,7 +226,7 @@ const LeadDetails = () => {
                     width: "18px",
                     height: "5px",
                     left: -2,
-                    borderBottom: `1px solid ${colors.grey[700]}`,
+                    borderBottom: `1px solid ${colors.white[400]}`,
                   }}
                 />
                 <Typography
@@ -229,14 +236,15 @@ const LeadDetails = () => {
                     width: "18px",
                     height: "calc(100% - 35px)",
                     left: "-39px",
-                    borderRight: `1px solid ${colors.grey[700]}`,
+                    borderRight: `1px solid ${colors.white[400]}`,
                   }}
                 />
                 <ListItemIcon sx={{ position: "absolute", top: 10, left: -39 }}>
                   <IconButton
                     sx={{
                       bgcolor: colors.greenAccent[800],
-                      color: colors.white[900],
+                      color: colors.white[500],
+                      border: `1px solid ${colors.white[400]}`,
                     }}
                   >
                     <EmailOutlinedIcon />
@@ -252,7 +260,7 @@ const LeadDetails = () => {
                     width: "18px",
                     height: "5px",
                     left: -2,
-                    borderBottom: `1px solid ${colors.grey[700]}`,
+                    borderBottom: `1px solid ${colors.white[400]}`,
                   }}
                 />
                 <Typography
@@ -262,14 +270,15 @@ const LeadDetails = () => {
                     width: "18px",
                     height: "calc(100% - 35px)",
                     left: "-39px",
-                    borderRight: `1px solid ${colors.grey[700]}`,
+                    borderRight: `1px solid ${colors.white[400]}`,
                   }}
                 />
                 <ListItemIcon sx={{ position: "absolute", top: 10, left: -39 }}>
                   <IconButton
                     sx={{
                       bgcolor: colors.redAccent[300],
-                      color: colors.white[900],
+                      color: colors.white[500],
+                      border: `1px solid ${colors.white[400]}`,
                     }}
                   >
                     <TaskAltOutlinedIcon />
@@ -285,7 +294,7 @@ const LeadDetails = () => {
                     width: "18px",
                     height: "5px",
                     left: -2,
-                    borderBottom: `1px solid ${colors.grey[700]}`,
+                    borderBottom: `1px solid ${colors.white[400]}`,
                   }}
                 />
                 <Typography
@@ -295,14 +304,15 @@ const LeadDetails = () => {
                     width: "18px",
                     height: "calc(100% - 35px)",
                     left: "-39px",
-                    borderRight: `1px solid ${colors.grey[700]}`,
+                    borderRight: `1px solid ${colors.white[400]}`,
                   }}
                 />
                 <ListItemIcon sx={{ position: "absolute", top: 10, left: -39 }}>
                   <IconButton
                     sx={{
                       bgcolor: colors.grey[800],
-                      color: colors.white[900],
+                      color: colors.white[500],
+                      border: `1px solid ${colors.white[400]}`,
                     }}
                   >
                     <DescriptionOutlinedIcon />
@@ -310,7 +320,7 @@ const LeadDetails = () => {
                 </ListItemIcon>
                 <NotesBoxActivity />
               </ListItem>
-              <ListItem key={"callActivity"}>
+              <ListItem key={"opportunityActivity"}>
                 <Typography
                   sx={{
                     position: "absolute",
@@ -318,7 +328,7 @@ const LeadDetails = () => {
                     width: "18px",
                     height: "5px",
                     left: -2,
-                    borderBottom: `1px solid ${colors.grey[700]}`,
+                    borderBottom: `1px solid ${colors.white[400]}`,
                   }}
                 />
                 <Typography
@@ -328,14 +338,15 @@ const LeadDetails = () => {
                     width: "18px",
                     height: "calc(100% - 35px)",
                     left: "-39px",
-                    borderRight: `1px solid ${colors.grey[700]}`,
+                    borderRight: `1px solid ${colors.white[400]}`,
                   }}
                 />
                 <ListItemIcon sx={{ position: "absolute", top: 10, left: -39 }}>
                   <IconButton
                     sx={{
                       bgcolor: colors.greenAccent[700],
-                      color: colors.white[900],
+                      color: colors.white[500],
+                      border: `1px solid ${colors.white[400]}`,
                     }}
                   >
                     <EmojiEventsOutlinedIcon />
@@ -351,7 +362,7 @@ const LeadDetails = () => {
                     width: "18px",
                     height: "5px",
                     left: -2,
-                    borderBottom: `1px solid ${colors.grey[700]}`,
+                    borderBottom: `1px solid ${colors.white[400]}`,
                   }}
                 />
                 <Typography
@@ -361,20 +372,95 @@ const LeadDetails = () => {
                     width: "18px",
                     height: "calc(100% - 35px)",
                     left: "-39px",
-                    borderRight: `1px solid ${colors.grey[700]}`,
+                    borderRight: `1px solid ${colors.white[400]}`,
                   }}
                 />
                 <ListItemIcon sx={{ position: "absolute", top: 10, left: -39 }}>
                   <IconButton
                     sx={{
-                      bgcolor: colors.greenAccent[700],
-                      color: colors.white[900],
+                      bgcolor: colors.blue[600],
+                      color: colors.white[500],
+                      border: `1px solid ${colors.white[400]}`,
                     }}
                   >
                     <CallOutlinedIcon />
                   </IconButton>
                 </ListItemIcon>
                 <CallBox />
+              </ListItem>
+              <ListItem key={"emailActivity1"}>
+                <Typography
+                  sx={{
+                    position: "absolute",
+                    top: "24px",
+                    width: "18px",
+                    height: "5px",
+                    left: -2,
+                    borderBottom: `1px solid ${colors.white[400]}`,
+                  }}
+                />
+                <Typography
+                  sx={{
+                    position: "absolute",
+                    top: "46px",
+                    width: "18px",
+                    height: "calc(100% - 35px)",
+                    left: "-39px",
+                    borderRight: `1px solid ${colors.white[400]}`,
+                  }}
+                />
+                <ListItemIcon sx={{ position: "absolute", top: 10, left: -39 }}>
+                  <IconButton
+                    sx={{
+                      bgcolor: colors.greenAccent[800],
+                      color: colors.white[500],
+                      border: `1px solid ${colors.white[400]}`,
+                    }}
+                  >
+                    <EmailOutlinedIcon />
+                  </IconButton>
+                </ListItemIcon>
+                <EmailBoxActivity
+                  emailActivity={mockedEmailActivity1}
+                  user={"Ajay Kumar"}
+                />
+              </ListItem>
+              <ListItem key={"emailActivity2"}>
+                <Typography
+                  sx={{
+                    position: "absolute",
+                    top: "24px",
+                    width: "18px",
+                    height: "5px",
+                    left: -2,
+                    borderBottom: `1px solid ${colors.white[400]}`,
+                  }}
+                />
+                <Typography
+                  sx={{
+                    position: "absolute",
+                    top: "46px",
+                    width: "18px",
+                    height: "calc(100% - 35px)",
+                    left: "-39px",
+                    borderRight: `1px solid ${colors.white[400]}`,
+                  }}
+                />
+                <ListItemIcon sx={{ position: "absolute", top: 10, left: -39 }}>
+                  <IconButton
+                    sx={{
+                      bgcolor: colors.greenAccent[800],
+                      color: colors.white[500],
+                      border: `1px solid ${colors.white[400]}`,
+                    }}
+                  >
+                    <EmailOutlinedIcon />
+                  </IconButton>
+                </ListItemIcon>
+                <EmailBoxActivity
+                  emailActivity={mockedEmailActivity2}
+                  user={"Liz Kaur"}
+                />
               </ListItem>
             </List>
           </Box>

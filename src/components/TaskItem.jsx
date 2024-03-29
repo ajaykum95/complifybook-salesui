@@ -36,7 +36,7 @@ export default function TaskItem() {
     <List sx={{ width: "100%", maxWidth: 360, bgcolor: colors.white[900] }}>
       <ListItem key={"taskItem1"} alignItems="flex-start">
         <ListItemAvatar>
-          <Avatar>
+          <Avatar sx={{ color: colors.white[500] }}>
             <AvatarName name={"Remy Sharp"} />
           </Avatar>
         </ListItemAvatar>
@@ -71,7 +71,7 @@ export default function TaskItem() {
       <Divider variant="inset" component="li" />
       <ListItem key={"taskItem2"} alignItems="flex-start">
         <ListItemAvatar>
-          <Avatar>
+          <Avatar sx={{ color: colors.white[500] }}>
             <AvatarName name={"Travis Howard"} />
           </Avatar>
         </ListItemAvatar>

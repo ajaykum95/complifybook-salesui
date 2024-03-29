@@ -44,7 +44,11 @@ export default function ContactItem() {
         sx={{ bgcolor: colors.orange[900] }}
       >
         <ListItemAvatar>
-          <Avatar>
+          <Avatar
+            sx={{
+              color: colors.white[500],
+            }}
+          >
             <AvatarName name={"Prince Malhotra Singh"} />
           </Avatar>
         </ListItemAvatar>
@@ -109,7 +113,11 @@ export default function ContactItem() {
         sx={{ bgcolor: colors.orange[900] }}
       >
         <ListItemAvatar>
-          <Avatar>
+          <Avatar
+            sx={{
+              color: colors.white[500],
+            }}
+          >
             <AvatarName name={"Travis Howard"} />
           </Avatar>
         </ListItemAvatar>

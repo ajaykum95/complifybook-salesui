@@ -52,6 +52,7 @@ export default function OpportunityItem() {
                   width: "5ch",
                   fontSize: "16px",
                   mt: "-9px",
+                  color: colors.white[500],
                 }}
               >
                 <AvatarName name="Remy Sharp" />
@@ -92,7 +93,7 @@ export default function OpportunityItem() {
             <Box
               sx={{
                 display: "flex",
-                border: `1px solid ${colors.grey[900]}`,
+                border: `1px solid ${colors.white[400]}`,
                 borderRadius: "10px",
                 mb: "10px",
               }}
@@ -180,6 +181,7 @@ export default function OpportunityItem() {
                   width: "5ch",
                   fontSize: "16px",
                   mt: "-9px",
+                  color: colors.white[500]
                 }}
               >
                 <AvatarName name="Ajay Kumar" />

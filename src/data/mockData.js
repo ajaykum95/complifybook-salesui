@@ -1,14 +1,63 @@
 import { tokens } from "../theme";
 
-export const mockedEmailActivity1 = {
-  id: 1,
-  subject: "It was great meeting you",
-};
-
-export const mockedEmailActivity2 = {
-  id: 10,
-  subject: "Thank you for your time",
-};
+export const mockedEmailActivity = [
+  {
+    id: 1,
+    subject: "It was great meeting you",
+    user: {
+      id: 12,
+      name: "Ajay Kumar",
+    },
+    emailTrail: [
+      {
+        id: 1,
+        fromName: "Ajay Kumar",
+        fromEmail: "ajay30935@gmail.com",
+        toName: "Vijay Kumar",
+        toEmail: "vijay30@gmail.com",
+        shortMessage:
+          "Hi Vijay, I'm Liz with Wayne Enterprises. We help inside sales teams close more deals. I want",
+        messageBody:
+          "<p>Hey Vijay,</p><p>It was awesome meeting you in Vegas at the Magicians Conference. Thanks again for stopping by our booth and checking out a demo. I loved our conversition about your passion for Segways.</p>" +
+          "<p>I'm reaching to continue the conversation.</p><p>Do you have 10 minutes to talk tomorrow?</p><p>Cheers,</p><p>Ajay Kumar</p>",
+      },
+      {
+        id: 2,
+        fromName: "Ajay Kumar",
+        fromEmail: "ajay30935@gmail.com",
+        toName: "Shankar Kumar Thakur",
+        toEmail: "shankar.kumar.thakur@gmail.com",
+        shortMessage:
+          "Hi Shankar, I'm Ajay with Abha Empire. We help inside sales teams close more deals. I want",
+        messageBody:
+          "<p>Hey Shankar,</p><p>It was awesome meeting you in Vegas at the Magicians Conference. Thanks again for stopping by our booth and checking out a demo. I loved our conversition about your passion for Segways.</p>" +
+          "<p>I'm reaching to continue the conversation.</p><p>Do you have 10 minutes to talk tomorrow?</p><p>Cheers,</p><p>Ajay Kumar</p>",
+      },
+    ],
+  },
+  {
+    id: 2,
+    subject: "Thank you for your time",
+    user: {
+      id: 10,
+      name: "Liz Kaur",
+    },
+    emailTrail: [
+      {
+        id: 3,
+        fromName: "Liz kaur",
+        fromEmail: "liz@gmail.com",
+        toName: "Gob Deo",
+        toEmail: "gob.deo@gmail.com",
+        shortMessage:
+          "Hi Gob, I'm Liz with Wayne Enterprises. We help inside sales teams close more deals. I want",
+        messageBody:
+          "<p>Hey Gob,</p><p>It was awesome meeting you in Vegas at the Magicians Conference. Thanks again for stopping by our booth and checking out a demo. I loved our conversition about your passion for Segways.</p>" +
+          "<p>I'm reaching to continue the conversation.</p><p>Do you have 10 minutes to talk tomorrow?</p><p>Cheers,</p><p>Ajay Kumar</p>",
+      },
+    ],
+  },
+];
 
 export const mockedPipeline = [
   {

@@ -32,10 +32,7 @@ import OpportunityBox from "../../components/OpportunityBox";
 import CallOutlinedIcon from "@mui/icons-material/CallOutlined";
 import CallBox from "../../components/CallBox";
 import EmailBoxActivity from "../../components/EmailBoxActivity";
-import {
-  mockedEmailActivity1,
-  mockedEmailActivity2,
-} from "../../data/mockData";
+import { mockedEmailActivity } from "../../data/mockData";
 
 const LeadDetails = () => {
   const theme = useTheme();
@@ -388,80 +385,44 @@ const LeadDetails = () => {
                 </ListItemIcon>
                 <CallBox />
               </ListItem>
-              <ListItem key={"emailActivity1"}>
-                <Typography
-                  sx={{
-                    position: "absolute",
-                    top: "24px",
-                    width: "18px",
-                    height: "5px",
-                    left: -2,
-                    borderBottom: `1px solid ${colors.white[400]}`,
-                  }}
-                />
-                <Typography
-                  sx={{
-                    position: "absolute",
-                    top: "46px",
-                    width: "18px",
-                    height: "calc(100% - 35px)",
-                    left: "-39px",
-                    borderRight: `1px solid ${colors.white[400]}`,
-                  }}
-                />
-                <ListItemIcon sx={{ position: "absolute", top: 10, left: -39 }}>
-                  <IconButton
+              {mockedEmailActivity.map((emailActivity) => (
+                <ListItem key={"emailActivity" + emailActivity.id}>
+                  <Typography
                     sx={{
-                      bgcolor: colors.greenAccent[800],
-                      color: colors.white[500],
-                      border: `1px solid ${colors.white[400]}`,
+                      position: "absolute",
+                      top: "24px",
+                      width: "18px",
+                      height: "5px",
+                      left: -2,
+                      borderBottom: `1px solid ${colors.white[400]}`,
                     }}
-                  >
-                    <EmailOutlinedIcon />
-                  </IconButton>
-                </ListItemIcon>
-                <EmailBoxActivity
-                  emailActivity={mockedEmailActivity1}
-                  user={"Ajay Kumar"}
-                />
-              </ListItem>
-              <ListItem key={"emailActivity2"}>
-                <Typography
-                  sx={{
-                    position: "absolute",
-                    top: "24px",
-                    width: "18px",
-                    height: "5px",
-                    left: -2,
-                    borderBottom: `1px solid ${colors.white[400]}`,
-                  }}
-                />
-                <Typography
-                  sx={{
-                    position: "absolute",
-                    top: "46px",
-                    width: "18px",
-                    height: "calc(100% - 35px)",
-                    left: "-39px",
-                    borderRight: `1px solid ${colors.white[400]}`,
-                  }}
-                />
-                <ListItemIcon sx={{ position: "absolute", top: 10, left: -39 }}>
-                  <IconButton
+                  />
+                  <Typography
                     sx={{
-                      bgcolor: colors.greenAccent[800],
-                      color: colors.white[500],
-                      border: `1px solid ${colors.white[400]}`,
+                      position: "absolute",
+                      top: "46px",
+                      width: "18px",
+                      height: "calc(100% - 35px)",
+                      left: "-39px",
+                      borderRight: `1px solid ${colors.white[400]}`,
                     }}
+                  />
+                  <ListItemIcon
+                    sx={{ position: "absolute", top: 10, left: -39 }}
                   >
-                    <EmailOutlinedIcon />
-                  </IconButton>
-                </ListItemIcon>
-                <EmailBoxActivity
-                  emailActivity={mockedEmailActivity2}
-                  user={"Liz Kaur"}
-                />
-              </ListItem>
+                    <IconButton
+                      sx={{
+                        bgcolor: colors.greenAccent[800],
+                        color: colors.white[500],
+                        border: `1px solid ${colors.white[400]}`,
+                      }}
+                    >
+                      <EmailOutlinedIcon />
+                    </IconButton>
+                  </ListItemIcon>
+                  <EmailBoxActivity emailActivity={emailActivity} />
+                </ListItem>
+              ))}
             </List>
           </Box>
         </Box>

@@ -5,7 +5,7 @@ import AvatarName from "./AvatarName";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 import EmailBoxAccordian from "./EmailBoxAccordian";
 
-export default function EmailBoxActivity({ emailActivity, user }) {
+export default function EmailBoxActivity({ emailActivity }) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -33,7 +33,7 @@ export default function EmailBoxActivity({ emailActivity, user }) {
               sx={{ color: colors.white[400] }}
             />
           </IconButton>
-          <Typography>{user}</Typography>
+          <Typography>{emailActivity.user.name}</Typography>
           <Avatar
             sx={{
               ml: 1,
@@ -43,12 +43,13 @@ export default function EmailBoxActivity({ emailActivity, user }) {
               color: colors.white[500],
             }}
           >
-            <AvatarName name={user} />
+            <AvatarName name={emailActivity.user.name} />
           </Avatar>
         </Box>
       </Box>
-      <EmailBoxAccordian />
-      <EmailBoxAccordian />
+      {emailActivity.emailTrail.map((email) => (
+        <EmailBoxAccordian key={email.id} emailActivity={email} />
+      ))}
     </Box>
   );
 }

@@ -1,5 +1,13 @@
 import { tokens } from "../theme";
 
+export const mockedLeadActivity = [
+  { name: "Notes", code: "1" },
+  { name: "Emails", code: "2" },
+  { name: "SMS", code: "3" },
+  { name: "Calls", code: "4" },
+  { name: "Status Changed", code: "5" },
+];
+
 export const mockedEmailActivity = [
   {
     id: 1,

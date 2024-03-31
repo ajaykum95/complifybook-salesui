@@ -145,7 +145,7 @@ export default function EmailBox() {
               sx={{
                 ml: 1,
                 bgcolor: colors.primary[700],
-                color: colors.white[900],
+                color: colors.white[500],
                 p: "0px 7px 0px 7px",
                 borderRadius: 1,
               }}

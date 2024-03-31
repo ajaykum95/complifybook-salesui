@@ -51,7 +51,7 @@ export default function EmailBoxAccordian({ emailActivity }) {
               width: "100%",
             }}
           >
-            <Box sx={{ width: "20%", display: "flex", alignItems: "center" }}>
+            <Box sx={{ display: "flex", alignItems: "center" }}>
               <Typography
                 sx={{
                   width: 5,
@@ -73,7 +73,7 @@ export default function EmailBoxAccordian({ emailActivity }) {
             </Box>
             <Box
               sx={{
-                width: "80%",
+                width: "76%",
               }}
             >
               <Box

@@ -10,7 +10,7 @@ import { tokens } from "../theme";
 import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
 import DoneOutlineOutlinedIcon from "@mui/icons-material/DoneOutlineOutlined";
 
-export default function NotesBox({ handleAddShowNotes }) {
+export default function CallBoxForm({ handleAddShowCall }) {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
 
@@ -33,8 +33,8 @@ export default function NotesBox({ handleAddShowNotes }) {
       >
         <TextField
           id="outlined-multiline-static"
-          label="Notes"
-          placeholder="Add a note about this lead"
+          label="Call"
+          placeholder="Add a note about this call"
           multiline
           rows={3}
         />
@@ -49,7 +49,7 @@ export default function NotesBox({ handleAddShowNotes }) {
       >
         <IconButton
           sx={{ color: colors.redAccent[400] }}
-          onClick={handleAddShowNotes}
+          onClick={handleAddShowCall}
         >
           <DeleteOutlinedIcon />
         </IconButton>

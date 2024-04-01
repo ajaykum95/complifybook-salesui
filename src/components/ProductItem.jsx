@@ -33,9 +33,20 @@ export default function ProductItem() {
 
   return (
     <List sx={{ width: "100%", maxWidth: 360, bgcolor: colors.white[900] }}>
-      <ListItem key={"productItem1"} alignItems="flex-start">
+      <ListItem
+        key={"productItem1"}
+        alignItems="flex-start"
+        sx={{ pt: 0,pb:0, borderBottom:colors.white[300] }}
+      >
         <ListItemAvatar>
-          <Avatar sx={{ color: colors.white[500] }}>
+          <Avatar
+            sx={{
+              width: 30,
+              height: 30,
+              fontSize: 14,
+              color: colors.white[500],
+            }}
+          >
             <AvatarName name={"Remy Sharp"} />
           </Avatar>
         </ListItemAvatar>
@@ -63,10 +74,21 @@ export default function ProductItem() {
           </Menu>
         </ListItemSecondaryAction>
       </ListItem>
-      <Divider variant="inset" component="li" />
-      <ListItem key={"productItem2"} alignItems="flex-start">
+      {/* <Divider variant="inset" component="li" /> */}
+      <ListItem
+        key={"productItem2"}
+        alignItems="flex-start"
+        sx={{ height: 50 }}
+      >
         <ListItemAvatar>
-          <Avatar sx={{ color: colors.white[500] }}>
+          <Avatar
+            sx={{
+              width: 30,
+              height: 30,
+              fontSize: 14,
+              color: colors.white[500],
+            }}
+          >
             <AvatarName name={"Travis Howard"} />
           </Avatar>
         </ListItemAvatar>
@@ -91,10 +113,21 @@ export default function ProductItem() {
           </Menu>
         </ListItemSecondaryAction>
       </ListItem>
-      <Divider variant="inset" component="li" />
-      <ListItem key={"productItem3"} alignItems="flex-start">
+      {/* <Divider variant="inset" component="li" /> */}
+      <ListItem
+        key={"productItem3"}
+        alignItems="flex-start"
+        sx={{ height: 50 }}
+      >
         <ListItemAvatar>
-          <Avatar sx={{ color: colors.white[500] }}>
+          <Avatar
+            sx={{
+              width: 30,
+              height: 30,
+              fontSize: 14,
+              color: colors.white[500],
+            }}
+          >
             <AvatarName name={"Ajay Kumar"} />
           </Avatar>
         </ListItemAvatar>

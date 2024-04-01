@@ -20,16 +20,27 @@ import Calendar from "./scenes/calendar/calendar";
 
 function App() {
   const [theme, colorMode] = useMode();
-  const [isSidebar, setIsSidebar] = useState(true);
+  const [isCollapsed, setIsCollapsed] = useState(false);
+
+  const handleCollapseSidebar = () => {
+    setIsCollapsed(!isCollapsed);
+  };
 
   return (
     <ColorModeContext.Provider value={colorMode}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <div className="app">
-          <Sidebar isSidebar={isSidebar} />
-          <main className="content">
-            <Topbar setIsSidebar={setIsSidebar} />
+          <Sidebar
+            handleCollapseSidebar={handleCollapseSidebar}
+            isCollapsed={isCollapsed}
+          />
+          <main
+            className={`content ${
+              isCollapsed ? "main-collapsed" : "main-non-collapsed"
+            }`}
+          >
+            <Topbar />
             <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/leads" element={<Leads />} />

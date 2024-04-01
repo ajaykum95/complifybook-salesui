@@ -3,8 +3,7 @@
 html,
 body,
 #root,
-.app,
-.content {
+.app {
   height: 100%;
   width: 100%;
   font-family: "Source Sans Pro", sans-serif;
@@ -32,4 +31,16 @@ body,
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+.sidebar-collapsed {
+  width: 7%;
+}
+.main-collapsed {
+  width: 93%;
+}
+.main-non-collapsed {
+  width: 78%;
+}
+.sidebar-non-collapsed {
+  width: 22%;
 }

@@ -38,6 +38,7 @@ import StatusChangedBox from "../../components/StatusChangedBox";
 import LeadFilter from "../../components/LeadFilter";
 import React from "react";
 import CallBoxForm from "../../components/CallBoxForm";
+import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 
 const LeadDetails = () => {
   const theme = useTheme();
@@ -64,16 +65,8 @@ const LeadDetails = () => {
   };
 
   return (
-    <Box
-      display="grid"
-      gridTemplateColumns="repeat(12, 1fr)"
-      gridAutoRows="140px"
-    >
-      <Box
-        gridColumn="span 4"
-        gridRow="span 13"
-        backgroundColor={colors.primary[400]}
-      >
+    <Box sx={{ width: "100%", display: "flex", bgcolor: colors.primary[400] }}>
+      <Box sx={{ width: "30%" }}>
         <Box
           mt="25px"
           p="0 10px"
@@ -81,15 +74,33 @@ const LeadDetails = () => {
           justifyContent="space-between"
           alignItems="center"
         >
-          <Box>
-            <Typography
-              variant="h3"
-              paddingBottom={"10px"}
-              fontWeight="600"
-              color={colors.grey[100]}
+          <Box sx={{ width: "100%" }}>
+            <Box
+              sx={{
+                width: "100%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}
             >
-              Abha Empire Private Limited
-            </Typography>
+              <Typography
+                variant="h3"
+                paddingBottom={"10px"}
+                fontWeight="600"
+                color={colors.grey[100]}
+                sx={{
+                  overflow: "hidden",
+                  whiteSpace: "nowrap",
+                  textOverflow: "ellipsis",
+                  width: "88%",
+                }}
+              >
+                Abha Empire Private Limited ajay kumar
+              </Typography>
+              <IconButton sx={{ width: "12%", bgcolor: colors.grey[900] }}>
+                <EditOutlinedIcon fontSize="small" />
+              </IconButton>
+            </Box>
             <Typography paddingBottom={"10px"} color={colors.blueAccent[100]}>
               <a
                 href="https://www.abhaempire.com"
@@ -151,11 +162,7 @@ const LeadDetails = () => {
           />
         </Box>
       </Box>
-      <Box
-        gridColumn="span 8"
-        gridRow="span 13"
-        backgroundColor={colors.primary[400]}
-      >
+      <Box sx={{ width: "70%" }}>
         <Box
           mt="25px"
           display="flex "

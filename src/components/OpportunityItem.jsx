@@ -41,17 +41,16 @@ export default function OpportunityItem() {
   };
 
   return (
-    <List sx={{ width: "100%", bgcolor: colors.white[900] }}>
-      <ListItem key={"item1"} alignItems="flex-start">
-        <Grid container alignItems="center" sx={{ display: "flex" }}>
+    <List sx={{ width: "100%", p: 0, bgcolor: colors.white[900] }}>
+      <ListItem key={"item1"} alignItems="flex-start" sx={{ pb: 0 }}>
+        <Grid container sx={{ display: "flex" }}>
           <Grid item xs={2}>
             <ListItemAvatar sx={{ minWidth: "47px" }}>
               <Avatar
                 sx={{
-                  height: "5ch",
-                  width: "5ch",
-                  fontSize: "16px",
-                  mt: "-9px",
+                  width: 35,
+                  height: 35,
+                  fontSize: 14,
                   color: colors.white[500],
                 }}
               >
@@ -160,28 +159,23 @@ export default function OpportunityItem() {
             xs={12}
             sx={{ borderTop: `1px solid ${colors.grey[900]}` }}
           >
-            <Typography sx={{ p: "15px 0" }}>
+            <Typography sx={{ p: "10px 0" }}>
               They really liked the demo - very intrested in our product.
             </Typography>
           </Grid>
         </Grid>
       </ListItem>
       <Divider />
-      <ListItem key={"item2"} alignItems="flex-start">
-        <Grid
-          container
-          alignItems="center"
-          sx={{ display: "flex", mt: "10px" }}
-        >
+      <ListItem key={"item2"} alignItems="flex-start" sx={{ pb: 0 }}>
+        <Grid container sx={{ display: "flex" }}>
           <Grid item xs={2}>
             <ListItemAvatar sx={{ minWidth: "47px" }}>
               <Avatar
                 sx={{
-                  height: "5ch",
-                  width: "5ch",
-                  fontSize: "16px",
-                  mt: "-9px",
-                  color: colors.white[500]
+                  width: 35,
+                  height: 35,
+                  fontSize: 14,
+                  color: colors.white[500],
                 }}
               >
                 <AvatarName name="Ajay Kumar" />

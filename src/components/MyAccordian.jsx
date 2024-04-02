@@ -1,14 +1,5 @@
 import * as React from "react";
-import {
-  Box,
-  Button,
-  FormControl,
-  InputAdornment,
-  InputLabel,
-  OutlinedInput,
-  TextField,
-  useTheme,
-} from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import { tokens } from "../theme";
 import { styled } from "@mui/material/styles";
 import Card from "@mui/material/Card";
@@ -50,6 +41,8 @@ export default function MyAccordian({
         sx={{
           borderBottom: `1px solid ${colors.grey[800]}`,
           bgcolor: colors.greenAccent[900],
+          pt: 0,
+          pb: 0,
         }}
       >
         <Typography variant="h6" fontWeight={"600"} pl={"10px"}>

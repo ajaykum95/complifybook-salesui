@@ -37,15 +37,20 @@ export default function ContactItem() {
   };
 
   return (
-    <List sx={{ width: "100%", maxWidth: 360, bgcolor: colors.white[900] }}>
+    <List
+      sx={{ width: "100%", p: 0, maxWidth: 360, bgcolor: colors.white[900] }}
+    >
       <ListItem
         key={"taskItem1"}
         alignItems="flex-start"
-        sx={{ bgcolor: colors.orange[900] }}
+        sx={{ bgcolor: colors.orange[900], pt: 0, pb: 0 }}
       >
         <ListItemAvatar>
           <Avatar
             sx={{
+              width: 35,
+              height: 35,
+              fontSize: 14,
               color: colors.white[500],
             }}
           >
@@ -110,11 +115,14 @@ export default function ContactItem() {
       <ListItem
         key={"taskItem2"}
         alignItems="flex-start"
-        sx={{ bgcolor: colors.orange[900] }}
+        sx={{ bgcolor: colors.orange[900], pt: 0, pb: 0 }}
       >
         <ListItemAvatar>
           <Avatar
             sx={{
+              width: 35,
+              height: 35,
+              fontSize: 14,
               color: colors.white[500],
             }}
           >
@@ -161,6 +169,7 @@ export default function ContactItem() {
           8178488820
         </Typography>
       </ListItem>
+      <Divider />
       <ListItem key={"listChildc22"} alignItems="flex-start">
         <Typography sx={{ fontWeight: "600", width: "20%" }}>Email</Typography>
         <Typography color={colors.blue[400]} width={"80%"}>

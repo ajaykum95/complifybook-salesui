@@ -64,31 +64,37 @@ export default function TaskForm({ formExpanded, setFormExpanded }) {
           size="small"
         />
       </FormControl>
-      <TextField
-        variant="outlined"
-        label="Date"
-        type="date"
-        size="small"
-        value={selectedDate}
-        id="outlined-start-adornment"
-        sx={{ m: 1, width: "21ch", bgcolor: colors.white[900] }}
-      />
-      <TextField
-        variant="outlined"
-        label="Time"
-        type="time"
-        size="small"
-        id="outlined-start-adornment"
-        sx={{ m: 1, width: "20ch", bgcolor: colors.white[900] }}
-        InputProps={{
-          startAdornment: <InputAdornment position="start"></InputAdornment>,
-        }}
-      />
+      <Box sx={{ width: "100%", display: "flex", alignItems:"center" }}>
+        <TextField
+          variant="outlined"
+          label="Date"
+          type="date"
+          size="small"
+          value={selectedDate}
+          id="outlined-start-adornment"
+          sx={{ m: 1, width: "100%", bgcolor: colors.white[900] }}
+        />
+        <TextField
+          variant="outlined"
+          label="Time"
+          type="time"
+          size="small"
+          id="outlined-start-adornment"
+          sx={{ m: 1, width: "100%", bgcolor: colors.white[900] }}
+          InputProps={{
+            startAdornment: <InputAdornment position="start"></InputAdornment>,
+          }}
+        />
+      </Box>
       <FormControl
         sx={{ m: 1, minWidth: 120, mt: 2, bgcolor: colors.white[900] }}
         fullWidth
       >
-        <InputLabel fullWidth id="demo-controlled-open-select-label" size="small">
+        <InputLabel
+          fullWidth
+          id="demo-controlled-open-select-label"
+          size="small"
+        >
           Assign User
         </InputLabel>
         <Select

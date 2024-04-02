@@ -1,7 +1,6 @@
 import * as React from "react";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import Divider from "@mui/material/Divider";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Avatar from "@mui/material/Avatar";
@@ -33,10 +32,21 @@ export default function TaskItem() {
   };
 
   return (
-    <List sx={{ width: "100%", maxWidth: 360, bgcolor: colors.white[900] }}>
-      <ListItem key={"taskItem1"} alignItems="flex-start">
+    <List sx={{ width: "100%", p: 0, bgcolor: colors.white[900] }}>
+      <ListItem
+        key={"taskItem1"}
+        alignItems="flex-start"
+        sx={{ pt: 0, pb: 0, borderBottom: `1px solid ${colors.grey[900]}` }}
+      >
         <ListItemAvatar>
-          <Avatar sx={{ color: colors.white[500] }}>
+          <Avatar
+            sx={{
+              width: 35,
+              height: 35,
+              fontSize: 14,
+              color: colors.white[500],
+            }}
+          >
             <AvatarName name={"Remy Sharp"} />
           </Avatar>
         </ListItemAvatar>
@@ -68,10 +78,16 @@ export default function TaskItem() {
           </Menu>
         </ListItemSecondaryAction>
       </ListItem>
-      <Divider variant="inset" component="li" />
-      <ListItem key={"taskItem2"} alignItems="flex-start">
+      <ListItem key={"taskItem2"} alignItems="flex-start" sx={{ pt: 0, pb: 0 }}>
         <ListItemAvatar>
-          <Avatar sx={{ color: colors.white[500] }}>
+          <Avatar
+            sx={{
+              width: 35,
+              height: 35,
+              fontSize: 14,
+              color: colors.white[500],
+            }}
+          >
             <AvatarName name={"Travis Howard"} />
           </Avatar>
         </ListItemAvatar>

@@ -1,7 +1,6 @@
 import * as React from "react";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import Divider from "@mui/material/Divider";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemAvatar from "@mui/material/ListItemAvatar";
 import Avatar from "@mui/material/Avatar";
@@ -32,17 +31,19 @@ export default function ProductItem() {
   };
 
   return (
-    <List sx={{ width: "100%", maxWidth: 360, bgcolor: colors.white[900] }}>
+    <List
+      sx={{ width: "100%", p: 0, maxWidth: 360, bgcolor: colors.white[900] }}
+    >
       <ListItem
         key={"productItem1"}
         alignItems="flex-start"
-        sx={{ pt: 0,pb:0, borderBottom:colors.white[300] }}
+        sx={{ pt: 0, pb: 0, borderBottom: `1px solid ${colors.grey[900]}` }}
       >
         <ListItemAvatar>
           <Avatar
             sx={{
-              width: 30,
-              height: 30,
+              width: 35,
+              height: 35,
               fontSize: 14,
               color: colors.white[500],
             }}
@@ -78,13 +79,13 @@ export default function ProductItem() {
       <ListItem
         key={"productItem2"}
         alignItems="flex-start"
-        sx={{ height: 50 }}
+        sx={{ pt: 0, pb: 0, borderBottom: `1px solid ${colors.grey[900]}` }}
       >
         <ListItemAvatar>
           <Avatar
             sx={{
-              width: 30,
-              height: 30,
+              width: 35,
+              height: 35,
               fontSize: 14,
               color: colors.white[500],
             }}
@@ -117,13 +118,13 @@ export default function ProductItem() {
       <ListItem
         key={"productItem3"}
         alignItems="flex-start"
-        sx={{ height: 50 }}
+        sx={{ pt: 0, pb: 0 }}
       >
         <ListItemAvatar>
           <Avatar
             sx={{
-              width: 30,
-              height: 30,
+              width: 35,
+              height: 35,
               fontSize: 14,
               color: colors.white[500],
             }}

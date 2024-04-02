@@ -39,6 +39,7 @@ import LeadFilter from "../../components/LeadFilter";
 import React from "react";
 import CallBoxForm from "../../components/CallBoxForm";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
+import UpdateClientModal from "../../components/UpdateClientModal";
 
 const LeadDetails = () => {
   const theme = useTheme();
@@ -47,6 +48,11 @@ const LeadDetails = () => {
   const [addEmailShow, setAddEmailShow] = React.useState(false);
   const [addSmsShow, setAddSmsShow] = React.useState(false);
   const [addCallShow, setAddCallShow] = React.useState(false);
+  const [openModal, setOpenModal] = React.useState(false);
+
+  const handleOpenModal = () => {
+    setOpenModal(!openModal);
+  };
 
   const showAddNotes = () => {
     setAddNotesShow(!addNotesShow);
@@ -97,7 +103,13 @@ const LeadDetails = () => {
               >
                 Abha Empire Private Limited ajay kumar
               </Typography>
-              <IconButton sx={{ width: "12%", bgcolor: colors.grey[900] }}>
+              <IconButton
+                onClick={handleOpenModal}
+                sx={{
+                  width: "12%",
+                  color: colors.blue[100],
+                }}
+              >
                 <EditOutlinedIcon fontSize="small" />
               </IconButton>
             </Box>
@@ -129,7 +141,7 @@ const LeadDetails = () => {
             </Typography>
           </Box>
         </Box>
-        <Box mt="25px" p="0 10px">
+        <Box mt={2} p="0 10px">
           <MyAccordian
             name={"PRODUCT :"}
             qty={3}
@@ -137,7 +149,7 @@ const LeadDetails = () => {
             FormComponent={ProductForm}
           />
         </Box>
-        <Box mt="25px" p="0 10px">
+        <Box mt={1} p="0 10px">
           <MyAccordian
             name={"TASK :"}
             qty={2}
@@ -145,7 +157,7 @@ const LeadDetails = () => {
             FormComponent={TaskForm}
           />
         </Box>
-        <Box mt="10px" p="0 10px">
+        <Box mt={1} p="0 10px">
           <MyAccordian
             name={"OPPORTUNITIES :"}
             qty={2}
@@ -153,7 +165,7 @@ const LeadDetails = () => {
             FormComponent={OpportunityForm}
           />
         </Box>
-        <Box mt="10px" p="0 10px">
+        <Box mt={1} p="0 10px">
           <MyAccordian
             name={"CONTACTS :"}
             qty={2}
@@ -531,6 +543,10 @@ const LeadDetails = () => {
           </Box>
         </Box>
       </Box>
+      <UpdateClientModal
+        openModal={openModal}
+        handleOpenModal={handleOpenModal}
+      />
     </Box>
   );
 };

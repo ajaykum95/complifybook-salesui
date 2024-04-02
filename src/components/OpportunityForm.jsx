@@ -183,76 +183,81 @@ export default function OpportunityForm({ formExpanded, setFormExpanded }) {
           ])}
         </Select>
       </FormControl>
-      <TextField
-        variant="outlined"
-        label="Estimated Close"
-        type="date"
-        size="small"
-        value={oppCloseDate}
-        onChange={updateOppDate}
-        id="outlined-start-adornment"
-        sx={{ m: 1, mb: 2, width: "21ch", bgcolor: colors.white[900] }}
-      />
-      <FormControl
-        sx={{
-          m: 1,
-          mb: 2,
-          width: "20ch",
-          bgcolor: colors.white[900],
-          alignItems: "center",
-          border: `1px solid ${colors.white[400]}`,
-        }}
-      >
-        <FormSlider sliderWidth="80%" />
-      </FormControl>
-      <FormControl sx={{ m: 1, width: "21ch", bgcolor: colors.white[900] }}>
-        <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
-        <OutlinedInput
-          id="outlined-adornment-amount"
-          value={amount}
-          onChange={handleChangeAmount}
-          sx={{ pl: "0px" }}
+      <Box sx={{ width: "100%", display: "flex", alignItems: "center" }}>
+        <TextField
+          variant="outlined"
+          label="Estimated Close"
+          type="date"
           size="small"
-          type="number"
-          startAdornment={
-            <InputAdornment position="start" sx={{ width: "3ch" }}>
-              <Select
-                labelId="currency-select-label"
-                id="currency-select"
-                value={currency}
-                onChange={handleChangeCurrency}
-                variant="outlined"
-                size="small"
-                sx={{
-                  "& fieldset": { border: "none" },
-                  "& .MuiSelect-icon": { display: "none" }
-                }}
-              >
-                <MenuItem value="₹">₹</MenuItem>
-                <MenuItem value="$">$</MenuItem>
-              </Select>
-            </InputAdornment>
-          }
-          label="Amount"
+          value={oppCloseDate}
+          onChange={updateOppDate}
+          id="outlined-start-adornment"
+          sx={{ m: 1, mb: 2, width: "21ch", bgcolor: colors.white[900] }}
         />
-      </FormControl>
-      <FormControl sx={{ m: 1, width: "20ch", bgcolor: colors.white[900] }}>
-        <InputLabel size="small" id="demo-simple-select-label">
-          Payment Term
-        </InputLabel>
-        <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={amountType}
-          label="Amount Type"
-          onChange={handleAmountType}
-          size="small"
+        <FormControl
+          sx={{
+            m: 1,
+            mb: 2,
+            width: "20ch",
+            height: "36px",
+            bgcolor: colors.white[900],
+            alignItems: "center",
+            border: `1px solid ${colors.white[400]}`,
+          }}
         >
-          <MenuItem value={1}>One-Time</MenuItem>
-          <MenuItem value={2}>Monthly</MenuItem>
-          <MenuItem value={3}>Yearly</MenuItem>
-        </Select>
-      </FormControl>
+          <FormSlider sliderWidth="80%" />
+        </FormControl>
+      </Box>
+      <Box sx={{ display: "flex", width: "100%", alignItems: "center" }}>
+        <FormControl sx={{ m: 1, width: "21ch", bgcolor: colors.white[900] }}>
+          <InputLabel htmlFor="outlined-adornment-amount">Amount</InputLabel>
+          <OutlinedInput
+            id="outlined-adornment-amount"
+            value={amount}
+            onChange={handleChangeAmount}
+            sx={{ pl: "0px" }}
+            size="small"
+            type="number"
+            startAdornment={
+              <InputAdornment position="start" sx={{ width: "3ch" }}>
+                <Select
+                  labelId="currency-select-label"
+                  id="currency-select"
+                  value={currency}
+                  onChange={handleChangeCurrency}
+                  variant="outlined"
+                  size="small"
+                  sx={{
+                    "& fieldset": { border: "none" },
+                    "& .MuiSelect-icon": { display: "none" },
+                  }}
+                >
+                  <MenuItem value="₹">₹</MenuItem>
+                  <MenuItem value="$">$</MenuItem>
+                </Select>
+              </InputAdornment>
+            }
+            label="Amount"
+          />
+        </FormControl>
+        <FormControl sx={{ m: 1, width: "20ch", bgcolor: colors.white[900] }}>
+          <InputLabel size="small" id="demo-simple-select-label">
+            Payment Term
+          </InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select"
+            value={amountType}
+            label="Amount Type"
+            onChange={handleAmountType}
+            size="small"
+          >
+            <MenuItem value={1}>One-Time</MenuItem>
+            <MenuItem value={2}>Monthly</MenuItem>
+            <MenuItem value={3}>Yearly</MenuItem>
+          </Select>
+        </FormControl>
+      </Box>
       <FormControl
         sx={{ m: 1, minWidth: 120, mt: 2, bgcolor: colors.white[900] }}
         fullWidth

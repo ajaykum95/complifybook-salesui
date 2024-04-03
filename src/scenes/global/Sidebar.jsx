@@ -83,8 +83,8 @@ const Sidebar = ({ handleCollapseSidebar, isCollapsed }) => {
                 <Box display="flex" justifyContent="center" alignItems="center">
                   <img
                     alt="profile-user"
-                    width="100px"
-                    height="100px"
+                    width="80px"
+                    height="80px"
                     src={`../../assets/user.png`}
                     style={{ cursor: "pointer", borderRadius: "50%" }}
                   />
@@ -95,7 +95,7 @@ const Sidebar = ({ handleCollapseSidebar, isCollapsed }) => {
               </Box>
             )}
           </MenuItem>
-          <Box paddingLeft={isCollapsed ? undefined : "10%"}>
+          <Box paddingLeft={isCollapsed ? undefined : "0%"}>
             <Item
               title="Dashboard"
               to="/"

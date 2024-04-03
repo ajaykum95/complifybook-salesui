@@ -98,7 +98,6 @@ const LeadDetails = () => {
                   overflow: "hidden",
                   whiteSpace: "nowrap",
                   textOverflow: "ellipsis",
-                  width: "88%",
                 }}
               >
                 Abha Empire Private Limited ajay kumar
@@ -106,7 +105,7 @@ const LeadDetails = () => {
               <IconButton
                 onClick={handleOpenModal}
                 sx={{
-                  width: "12%",
+                  mt:"-4px",
                   color: colors.blue[100],
                 }}
               >

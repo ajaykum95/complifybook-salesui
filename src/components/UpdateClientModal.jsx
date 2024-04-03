@@ -1,14 +1,18 @@
 import * as React from "react";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
+import PersonIcon from "@mui/icons-material/Person";
+import CloseIcon from "@mui/icons-material/Close";
 import {
   Button,
   FormControl,
+  IconButton,
   InputLabel,
   MenuItem,
   OutlinedInput,
   Select,
   TextField,
+  Typography,
   useTheme,
 } from "@mui/material";
 import { tokens } from "../theme";
@@ -18,11 +22,10 @@ const style = {
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
-  width: 500,
+  width: 400,
   bgcolor: "background.paper",
-  border: "2px solid #000",
   boxShadow: 24,
-  p: 4,
+  border: "none",
 };
 
 export default function UpdateClientModal({ openModal, handleOpenModal }) {
@@ -38,11 +41,38 @@ export default function UpdateClientModal({ openModal, handleOpenModal }) {
       >
         <Box sx={style}>
           <Box
+            sx={{
+              p: "10px 0 10px 10px",
+              bgcolor: colors.greenAccent[900],
+              borderBottom: `2px solid ${colors.white[500]}`,
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "space-between",
+              }}
+            >
+              <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                <IconButton sx={{ p: 0 }}>
+                  <PersonIcon fontSize="medium" />
+                </IconButton>
+                <Typography variant="h5" align="left" fontWeight={600}>
+                  Update Client Information
+                </Typography>
+              </Box>
+              <IconButton sx={{ mr: 1, p: "3px" }} onClick={handleOpenModal}>
+                <CloseIcon fontSize="small" />
+              </IconButton>
+            </Box>
+          </Box>
+          <Box
             component="form"
             noValidate
             autoComplete="off"
-            p={"10px 0px"}
             sx={{
+              p: "5px 10px 5px 10px",
               display: "flex",
               flexWrap: "wrap",
               bgcolor: colors.greenAccent[900],
@@ -194,7 +224,9 @@ export default function UpdateClientModal({ openModal, handleOpenModal }) {
               />
             </FormControl>
             <Box textAlign={"end"} width={"100%"} p={"10px 10px"}>
-              <Button color="error">Cancel</Button>
+              <Button color="error" onClick={handleOpenModal}>
+                Cancel
+              </Button>
               <Button variant="contained" color="success" sx={{ ml: 2 }}>
                 Save
               </Button>

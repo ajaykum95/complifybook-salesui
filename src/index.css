@@ -39,8 +39,12 @@ body,
   width: 93%;
 }
 .main-non-collapsed {
-  width: 78%;
+  width: 82%;
 }
 .sidebar-non-collapsed {
-  width: 22%;
+  width: 18%;
+}
+.sidebar-non-collapsed .pro-sidebar {
+  width: 220px;
+  min-width: 220px;
 }

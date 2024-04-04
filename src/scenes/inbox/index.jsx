@@ -2,10 +2,10 @@ import { Box, useTheme } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
 import { mockDataLeads } from "../../data/mockData";
-import Header from "../../components/Header";
 import { Link } from "react-router-dom";
+import Filter from "./Filter";
 
-const Leads = () => {
+const Inbox = () => {
   const theme = useTheme();
   const colors = tokens(theme.palette.mode);
   const columns = [
@@ -37,7 +37,8 @@ const Leads = () => {
 
   return (
     <Box m="20px">
-      <Header title="Leads" subtitle="Managing the Leads" />
+      <Filter />
+      {/* <Header title="Inbox" subtitle="Managing the Inbox" /> */}
       <Box
         m="20px 0 0 0"
         sx={{
@@ -78,4 +79,4 @@ const Leads = () => {
   );
 };
 
-export default Leads;
+export default Inbox;

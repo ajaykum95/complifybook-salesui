@@ -13,6 +13,7 @@ import Form from "./scenes/form";
 import Line from "./scenes/line";
 import Pie from "./scenes/pie";
 import FAQ from "./scenes/faq";
+import Inbox from "./scenes/inbox/index";
 import Geography from "./scenes/geography";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
@@ -43,6 +44,7 @@ function App() {
             <Topbar />
             <Routes>
               <Route path="/" element={<Dashboard />} />
+              <Route path="/inbox" element={<Inbox />} />
               <Route path="/leads" element={<Leads />} />
               <Route path="/leads/:leadId" element={<LeadDetails />} />
               <Route path="/team" element={<Team />} />

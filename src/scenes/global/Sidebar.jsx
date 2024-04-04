@@ -5,18 +5,22 @@ import { Link } from "react-router-dom";
 import "react-pro-sidebar/dist/css/styles.css";
 import { tokens } from "../../theme";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
 import ContactsOutlinedIcon from "@mui/icons-material/ContactsOutlined";
-import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
-import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
-import PieChartOutlineOutlinedIcon from "@mui/icons-material/PieChartOutlineOutlined";
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import ApartmentOutlinedIcon from "@mui/icons-material/ApartmentOutlined";
+import GeneralSettingIcon from "@mui/icons-material/ManageAccountsOutlined";
+import TeamManagementIcon from "@mui/icons-material/GroupsOutlined";
+import RoleAndPermissionsIcon from "@mui/icons-material/SettingsAccessibilityOutlined";
+import StatusesAndPipelinesIcon from "@mui/icons-material/DataUsageOutlined";
+import BillingPlanIcon from "@mui/icons-material/TurnedInNotOutlined";
+import BillingUsageIcon from "@mui/icons-material/TrendingUpOutlined";
+import InboxIcon from "@mui/icons-material/InboxOutlined";
+import OpportunityIcon from "@mui/icons-material/EmojiEventsOutlined";
+import TemplateIcon from "@mui/icons-material/EventNoteOutlined";
 
 const Item = ({ title, to, icon, selected, setSelected }) => {
   const theme = useTheme();
@@ -46,7 +50,8 @@ const Sidebar = ({ handleCollapseSidebar, isCollapsed }) => {
       className={isCollapsed ? "sidebar-collapsed" : "sidebar-non-collapsed"}
       sx={{
         "& .pro-sidebar-inner": {
-          background: `${colors.white[900]} !important`,
+          height: "auto !important",
+          background: `${colors.blueAccent[900]} !important`,
         },
         "& .pro-icon-wrapper": {
           backgroundColor: "transparent !important",
@@ -112,6 +117,20 @@ const Sidebar = ({ handleCollapseSidebar, isCollapsed }) => {
               Sales
             </Typography>
             <Item
+              title="Inbox"
+              to="/inbox"
+              icon={<InboxIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
+              title="Opportunities"
+              to="/leads"
+              icon={<OpportunityIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
               title="Leads"
               to="/leads"
               icon={<ApartmentOutlinedIcon />}
@@ -119,27 +138,112 @@ const Sidebar = ({ handleCollapseSidebar, isCollapsed }) => {
               setSelected={setSelected}
             />
             <Item
-              title="Manage Team"
-              to="/team"
-              icon={<PeopleOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="Contacts Information"
+              title="Contacts"
               to="/contacts"
               icon={<ContactsOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
             <Item
-              title="Invoices Balances"
-              to="/invoices"
-              icon={<ReceiptOutlinedIcon />}
+              title="Reports"
+              to="/contacts"
+              icon={<TimelineOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />
 
+            <Typography
+              variant="h6"
+              color={colors.grey[300]}
+              sx={{ m: "15px 0 5px 20px" }}
+            >
+              Settings
+            </Typography>
+            {/* <Item
+              title="Bar Chart"
+              to="/bar"
+              icon={<BarChartOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
+              title="Pie Chart"
+              to="/pie"
+              icon={<PieChartOutlineOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
+              title="Line Chart"
+              to="/line"
+              icon={<TimelineOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
+              title="Geography Chart"
+              to="/geography"
+              icon={<MapOutlinedIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            ></Item> */}
+
+            <Item
+              title="General"
+              to="/submenu1"
+              selected={selected}
+              icon={<GeneralSettingIcon />}
+              setSelected={setSelected}
+            />
+            <Item
+              title="Team Management"
+              to="/team"
+              icon={<TeamManagementIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
+              title="Roles & Permissions"
+              to="/submenu2"
+              icon={<RoleAndPermissionsIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
+              title="Statuses & Pipelines"
+              to="/submenu2"
+              icon={<StatusesAndPipelinesIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            />
+            <Item
+              title="Template Management"
+              to="/geography"
+              icon={<TemplateIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            ></Item>
+            <Typography
+              variant="h6"
+              color={colors.grey[300]}
+              sx={{ m: "15px 0 5px 20px" }}
+            >
+              Billing
+            </Typography>
+            <Item
+              title="Plan"
+              to="/geography"
+              icon={<BillingPlanIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            ></Item>
+            <Item
+              title="Usage"
+              to="/geography"
+              icon={<BillingUsageIcon />}
+              selected={selected}
+              setSelected={setSelected}
+            ></Item>
             <Typography
               variant="h6"
               color={colors.grey[300]}
@@ -165,42 +269,6 @@ const Sidebar = ({ handleCollapseSidebar, isCollapsed }) => {
               title="FAQ Page"
               to="/faq"
               icon={<HelpOutlineOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-
-            <Typography
-              variant="h6"
-              color={colors.grey[300]}
-              sx={{ m: "15px 0 5px 20px" }}
-            >
-              Charts
-            </Typography>
-            <Item
-              title="Bar Chart"
-              to="/bar"
-              icon={<BarChartOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="Pie Chart"
-              to="/pie"
-              icon={<PieChartOutlineOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="Line Chart"
-              to="/line"
-              icon={<TimelineOutlinedIcon />}
-              selected={selected}
-              setSelected={setSelected}
-            />
-            <Item
-              title="Geography Chart"
-              to="/geography"
-              icon={<MapOutlinedIcon />}
               selected={selected}
               setSelected={setSelected}
             />

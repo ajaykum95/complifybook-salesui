@@ -9,6 +9,10 @@ body,
   font-family: "Source Sans Pro", sans-serif;
 }
 
+a {
+  text-decoration: none;
+}
+
 .app {
   display: flex;
   position: relative;
@@ -45,6 +49,6 @@ body,
   width: 18%;
 }
 .sidebar-non-collapsed .pro-sidebar {
-  width: 220px;
-  min-width: 220px;
+  width: 230px;
+  min-width: 230px;
 }

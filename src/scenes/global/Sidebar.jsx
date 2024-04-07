@@ -125,7 +125,7 @@ const Sidebar = ({ handleCollapseSidebar, isCollapsed }) => {
             />
             <Item
               title="Opportunities"
-              to="/leads"
+              to="/opportunities"
               icon={<OpportunityIcon />}
               selected={selected}
               setSelected={setSelected}

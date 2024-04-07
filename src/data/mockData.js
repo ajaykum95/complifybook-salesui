@@ -202,6 +202,66 @@ export const mockedProduct2 = [
   },
 ];
 
+export const mockedDataInbox = [
+  {
+    id: 10,
+    type: "FollowUp",
+    title: "Gst Registration",
+    subject: "Follow up $15000 opportunity",
+    description: "",
+    date: "Nov 17",
+    time: "12:15 PM",
+  },
+  {
+    id: 11,
+    type: "SMS",
+    title: "Ajay Kumar",
+    subject: "Received SMS",
+    description:
+      "Very exited to hear this! would love to have a demo. Call me and let me know when you are available.",
+    date: "Nov 17",
+    time: "12:15 PM",
+  },
+  {
+    id: 12,
+    type: "FollowUp",
+    title: "Gst Registration",
+    subject: "Follow up $15000 opportunity",
+    description: "",
+    date: "Nov 17",
+    time: "12:15 PM",
+  },
+  {
+    id: 13,
+    type: "SMS",
+    title: "Ajay Kumar",
+    subject: "Received SMS",
+    description:
+      "Very exited to hear this! would love to have a demo. Call me and let me know when you are available.",
+    date: "Nov 17",
+    time: "12:15 PM",
+  },
+  {
+    id: 14,
+    type: "FollowUp",
+    title: "Gst Registration",
+    subject: "Follow up $15000 opportunity",
+    description: "",
+    date: "Nov 17",
+    time: "12:15 PM",
+  },
+  {
+    id: 15,
+    type: "SMS",
+    title: "Ajay Kumar",
+    subject: "Received SMS",
+    description:
+      "Very exited to hear this! would love to have a demo. Call me and let me know when you are available.",
+    date: "Nov 17",
+    time: "12:15 PM",
+  },
+];
+
 export const mockDataLeads = [
   {
     id: 1,

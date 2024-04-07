@@ -52,3 +52,9 @@ a {
   width: 230px;
   min-width: 230px;
 }
+.MuiDataGrid-root {
+  border-radius: 0 !important;
+}
+.fc-daygrid-day-events {
+  display: none;
+}

@@ -36,10 +36,10 @@ const Leads = () => {
   ];
 
   return (
-    <Box m="20px">
+    <Box m="10px">
       <Header title="Leads" subtitle="Managing the Leads" />
       <Box
-        m="20px 0 0 0"
+        m="10px 0 0 0"
         sx={{
           "& .MuiDataGrid-root": {
             border: "none",
@@ -51,8 +51,9 @@ const Leads = () => {
             color: colors.greenAccent[300],
           },
           "& .MuiDataGrid-columnHeaders": {
-            backgroundColor: colors.blueAccent[900],
+            backgroundColor: colors.custom[100],
             borderBottom: "none",
+            color: colors.white[100],
           },
           "& .MuiDataGrid-virtualScroller": {
             backgroundColor: colors.white[500],

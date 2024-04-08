@@ -50,11 +50,11 @@ export default function FormSlider({ sliderWidth }) {
         sx={{
           p: "0px",
           mt: "17px",
-          color: colors.white[400], // Change the color of the slider track
+          color: colors.white[400],
           "& .MuiSlider-thumb": {
             color: colors.white[400],
-            width: 13, // Set the width of the thumb
-            height: 13, // Set the height of the thumb
+            width: 13,
+            height: 13,
           },
         }}
       />

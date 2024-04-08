@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 import { tokens } from "../../theme";
-import { mockDataContacts } from "../../data/mockData";
+import { mockDataOpportunity } from "../../data/mockData";
 import Header from "../../components/Header";
 import { useTheme } from "@mui/material";
 
@@ -10,45 +10,44 @@ const Opportunity = () => {
   const colors = tokens(theme.palette.mode);
 
   const columns = [
-    { field: "id", headerName: "ID", flex: 0.5 },
-    { field: "registrarId", headerName: "Registrar ID" },
     {
-      field: "name",
-      headerName: "Name",
+      field: "leadName",
+      headerName: "Lead",
       flex: 1,
       cellClassName: "name-column--cell",
+      renderCell: (params) => {
+        return params.row.lead.name;
+      },
     },
     {
-      field: "age",
-      headerName: "Age",
+      field: "value",
+      headerName: "Value",
       type: "number",
       headerAlign: "left",
       align: "left",
     },
     {
-      field: "phone",
-      headerName: "Phone Number",
+      field: "confidence",
+      headerName: "Confidence",
       flex: 1,
     },
     {
-      field: "email",
-      headerName: "Email",
+      field: "closeDate",
+      headerName: "Close Date",
       flex: 1,
     },
     {
-      field: "address",
-      headerName: "Address",
+      field: "status",
+      headerName: "Status",
       flex: 1,
     },
     {
-      field: "city",
-      headerName: "City",
+      field: "userName",
+      headerName: "User",
       flex: 1,
-    },
-    {
-      field: "zipCode",
-      headerName: "Zip Code",
-      flex: 1,
+      renderCell: (params) => {
+        return params.row.user.name;
+      },
     },
   ];
 
@@ -63,18 +62,9 @@ const Opportunity = () => {
           "& .MuiDataGrid-root": {
             border: "none",
           },
-          "& .MuiDataGrid-cell": {
-            borderBottom: "none",
-          },
-          "& .name-column--cell": {
-            color: colors.greenAccent[300],
-          },
           "& .MuiDataGrid-columnHeaders": {
             backgroundColor: colors.custom[100],
             borderBottom: "none",
-          },
-          "& .MuiDataGrid-footerContainer": {
-            borderTop: "none",
           },
           "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
             color: `${colors.grey[100]} !important`,
@@ -82,11 +72,12 @@ const Opportunity = () => {
         }}
       >
         <DataGrid
-          rows={mockDataContacts}
+          rows={mockDataOpportunity}
           columns={columns}
           components={{ Toolbar: GridToolbar }}
           autoHeight={true}
           headerHeight={40}
+          rowHeight={45}
         />
       </Box>
     </Box>

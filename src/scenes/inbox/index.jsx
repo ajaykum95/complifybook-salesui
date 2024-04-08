@@ -72,9 +72,6 @@ const Inbox = () => {
       {/* <Header title="Inbox" subtitle="Managing the Inbox" /> */}
       <Box
         sx={{
-          "& .name-column--cell": {
-            color: colors.greenAccent[300],
-          },
           "& .MuiDataGrid-columnHeaders": {
             border: "none",
           },

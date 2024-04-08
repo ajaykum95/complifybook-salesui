@@ -1,5 +1,38 @@
 import { tokens } from "../theme";
 
+export const mockDataOpportunity = [
+  {
+    id: 1,
+    lead: {
+      id: 1,
+      name: "Gst Registration",
+    },
+    value: "$300",
+    confidence: 70,
+    closeDate: "2024-04-10",
+    status: "Sent Contract",
+    user: {
+      id: 1,
+      name: "Ajay Kumar",
+    },
+  },
+  {
+    id: 2,
+    lead: {
+      id: 2,
+      name: "NBFC Registration",
+    },
+    value: "$400",
+    confidence: 50,
+    closeDate: "2024-04-12",
+    status: "Proposal Sent",
+    user: {
+      id: 1,
+      name: "Vijay Shankar",
+    },
+  },
+];
+
 export const mockedLeadActivity = [
   { name: "Notes", code: "1" },
   { name: "Emails", code: "2" },

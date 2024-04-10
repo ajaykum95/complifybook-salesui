@@ -4,6 +4,7 @@ import { tokens } from "../../theme";
 import { mockDataLeads } from "../../data/mockData";
 import Header from "../../components/Header";
 import { Link } from "react-router-dom";
+import MultiContact from "./MultiContact";
 
 const Leads = () => {
   const theme = useTheme();
@@ -11,7 +12,7 @@ const Leads = () => {
   const columns = [
     {
       field: "name",
-      headerName: "Name",
+      headerName: "Lead",
       flex: 1,
       cellClassName: "name-column--cell",
       align: "left",
@@ -29,6 +30,15 @@ const Leads = () => {
       valueGetter: (params) => params.row.client.name,
     },
     {
+      field: "contacts",
+      headerName: "Contacts",
+      flex: 1,
+      align: "left",
+      renderCell: (params) => {
+        return <MultiContact contacts={params.row.contacts} />;
+      },
+    },
+    {
       field: "status",
       headerName: "Status",
       align: "left",
@@ -39,30 +49,19 @@ const Leads = () => {
     <Box m="10px">
       <Header title="Leads" subtitle="Managing the Leads" />
       <Box
-        m="10px 0 0 0"
         sx={{
           "& .MuiDataGrid-root": {
             border: "none",
           },
-          "& .MuiDataGrid-cell": {
-            borderBottom: "none",
-          },
-          "& .name-column--cell": {
-            color: colors.greenAccent[300],
-          },
           "& .MuiDataGrid-columnHeaders": {
             backgroundColor: colors.custom[100],
             borderBottom: "none",
-            color: colors.white[100],
           },
-          "& .MuiDataGrid-virtualScroller": {
-            backgroundColor: colors.white[500],
+          "& .MuiDataGrid-toolbarContainer .MuiButton-text": {
+            color: `${colors.grey[100]} !important`,
           },
-          "& .MuiDataGrid-footerContainer": {
-            borderTop: "none",
-          },
-          "& .MuiCheckbox-root": {
-            color: `${colors.greenAccent[200]} !important`,
+          "& .MuiDataGrid-virtualScroller a": {
+            color: colors.blue[200],
           },
         }}
       >

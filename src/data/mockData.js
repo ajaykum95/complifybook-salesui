@@ -302,6 +302,44 @@ export const mockDataLeads = [
     client: {
       name: "Abha Empire",
     },
+    contacts: [
+      {
+        id: 12,
+        name: "Ajay Kumar",
+        email: "ajay30935@gmail.com",
+        mobile: "7550756640",
+      },
+      {
+        id: 16,
+        name: "Jhone dawe",
+        email: "john.dawe@gmail.com",
+        mobile: "7980756640",
+      },
+      {
+        id: 14,
+        name: "Vijay Kumar",
+        email: "vijay.kumar@gmail.com",
+        mobile: "9550756640",
+      },
+      {
+        id: 32,
+        name: "Ajay Kumar",
+        email: "ajay30935@gmail.com",
+        mobile: "7550756640",
+      },
+      {
+        id: 36,
+        name: "Jhone dawe",
+        email: "john.dawe@gmail.com",
+        mobile: "7980756640",
+      },
+      {
+        id: 34,
+        name: "Vijay Kumar",
+        email: "vijay.kumar@gmail.com",
+        mobile: "9550756640",
+      },
+    ],
     status: "Intrested",
   },
   {
@@ -310,6 +348,20 @@ export const mockDataLeads = [
     client: {
       name: "Abha Empire",
     },
+    contacts: [
+      {
+        id: 13,
+        name: "Raj Kumar",
+        email: "raj.kumar5@gmail.com",
+        mobile: "8767890987",
+      },
+      {
+        id: 24,
+        name: "Sanjay Garj",
+        email: "sanjay.garj@gmail.com",
+        mobile: "6550756640",
+      },
+    ],
     status: "Potential",
   },
   {
@@ -318,6 +370,14 @@ export const mockDataLeads = [
     client: {
       name: "Abha Empire",
     },
+    contacts: [
+      {
+        id: 23,
+        name: "Rajani Kumari Rai",
+        email: "rajni.kumari5@gmail.com",
+        mobile: "6767890987",
+      },
+    ],
     status: "Loss",
   },
 ];

@@ -76,7 +76,6 @@ const Inbox = () => {
             border: "none",
           },
           "& .MuiDataGrid-virtualScroller a": {
-            // backgroundColor: colors.white[500],
             color:colors.blue[200]
           },
           "& .MuiCheckbox-root": {

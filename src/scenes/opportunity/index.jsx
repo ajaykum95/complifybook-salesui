@@ -4,6 +4,7 @@ import { tokens } from "../../theme";
 import { mockDataOpportunity } from "../../data/mockData";
 import Header from "../../components/Header";
 import { useTheme } from "@mui/material";
+import ProgressSlider from "../../components/ProgressSlider";
 
 const Opportunity = () => {
   const theme = useTheme();
@@ -30,6 +31,9 @@ const Opportunity = () => {
       field: "confidence",
       headerName: "Confidence",
       flex: 1,
+      renderCell: (params) => {
+        return <ProgressSlider sliderWidth={params.row.confidence} />;
+      },
     },
     {
       field: "closeDate",

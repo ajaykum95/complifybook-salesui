@@ -90,7 +90,7 @@ const Sidebar = ({ handleCollapseSidebar, isCollapsed }) => {
                     alt="profile-user"
                     width="80px"
                     height="80px"
-                    src={`../../assets/user.png`}
+                    src={`../assets/user.png`}
                     style={{ cursor: "pointer", borderRadius: "50%" }}
                   />
                 </Box>
@@ -218,7 +218,7 @@ const Sidebar = ({ handleCollapseSidebar, isCollapsed }) => {
             />
             <Item
               title="Template Management"
-              to="/geography"
+              to="/setting/templates"
               icon={<TemplateIcon />}
               selected={selected}
               setSelected={setSelected}

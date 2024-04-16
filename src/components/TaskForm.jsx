@@ -64,7 +64,7 @@ export default function TaskForm({ formExpanded, setFormExpanded }) {
           size="small"
         />
       </FormControl>
-      <Box sx={{ width: "100%", display: "flex", alignItems:"center" }}>
+      <Box sx={{ width: "100%", display: "flex", alignItems: "center" }}>
         <TextField
           variant="outlined"
           label="Date"
@@ -90,11 +90,7 @@ export default function TaskForm({ formExpanded, setFormExpanded }) {
         sx={{ m: 1, minWidth: 120, mt: 2, bgcolor: colors.white[900] }}
         fullWidth
       >
-        <InputLabel
-          fullWidth
-          id="demo-controlled-open-select-label"
-          size="small"
-        >
+        <InputLabel id="demo-controlled-open-select-label" size="small">
           Assign User
         </InputLabel>
         <Select

@@ -15,6 +15,8 @@ import Pie from "./scenes/pie";
 import FAQ from "./scenes/faq";
 import Inbox from "./scenes/inbox/index";
 import Opportunity from "./scenes/opportunity/index";
+import NewTemplte from "./scenes/template/NewTemplate.jsx";
+import ManageTemplate from "./scenes/template/ManageTemplate.jsx";
 import Geography from "./scenes/geography";
 import { CssBaseline, ThemeProvider } from "@mui/material";
 import { ColorModeContext, useMode } from "./theme";
@@ -47,6 +49,11 @@ function App() {
               <Route path="/" element={<Dashboard />} />
               <Route path="/inbox" element={<Inbox />} />
               <Route path="/opportunities" element={<Opportunity />} />
+              <Route path="/setting/templates" element={<ManageTemplate />} />
+              <Route
+                path="/setting/templates/new-template/:type"
+                element={<NewTemplte />}
+              />
               <Route path="/leads" element={<Leads />} />
               <Route path="/leads/:leadId" element={<LeadDetails />} />
               <Route path="/team" element={<Team />} />

@@ -47,7 +47,6 @@ export default function ProductForm({ formExpanded, setFormExpanded }) {
         fullWidth
       >
         <InputLabel
-          fullWidth
           id="demo-controlled-open-select-label"
           size="small"
         >
@@ -73,7 +72,6 @@ export default function ProductForm({ formExpanded, setFormExpanded }) {
         fullWidth
       >
         <InputLabel
-          fullWidth
           id="demo-controlled-open-select-label1"
           size="small"
         >

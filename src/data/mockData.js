@@ -1,5 +1,16 @@
 import { tokens } from "../theme";
 
+export const mockedPlaceholder = [
+  {
+    id: 1,
+    placeholder: "lead.display_name",
+  },
+  {
+    id: 2,
+    placeholder: "lead.url",
+  },
+];
+
 export const mockDataTemplate = [
   {
     id: 1,
